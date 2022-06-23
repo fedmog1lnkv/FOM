@@ -33,7 +33,10 @@ class parser:
 
 	def get_main_information(self):
 		return self.main_information
-	
+		
+	def get_comprtitions(self):
+		return self.competitions
+
 	def print(self):
 		for row in self.file.tables[3].rows:
 			for cell in row.cells:

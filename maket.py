@@ -2,11 +2,18 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
 from filler import filler
+from parser import parser
 
 FQ = "1. Выберите файл\n2. Перейдите во вкладку 'Редактирование'\n3. Сделайте замену и подтвердите\n4. Всё готово, документ отредактирован\n1. Выберите файл\n2. Перейдите во вкладку 'Редактирование'\n3. Сделайте замену и подтвердите\n4. Всё готово, документ отредактирован"
 
 
 class app:
+
+	editor = filler("docx/shablon.docx")
+	local_parser = None
+	main_information = None
+	competitions = None
+
 	def __init__(self, master):
 		self.master = master
 		self.master.title("ФОНД ОЦЕНОЧНЫХ СРЕДСТВ")
@@ -15,9 +22,12 @@ class app:
 
 	def request_file(self):
 		filename = filedialog.askopenfilename()
-		editor = filler("docx/shablon.docx", filename)
-		editor.fill_main_information()
-		editor.save("docx/new_from_maket.docx")
+		self.local_parser = parser(filename)
+		self.local_parser.go_parse()
+		self.main_information = self.local_parser.get_main_information()
+		self.competitions = self.local_parser.get_comprtitions()
+		self.editor.fill_main_information(self.main_information)
+		self.editor.save("docx/new_from_maket.docx")
 
 	def page_1(self):
 		for i in self.master.winfo_children():
