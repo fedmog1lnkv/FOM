@@ -28,6 +28,12 @@ class app:
 		self.competitions = self.local_parser.get_comprtitions()
 		self.editor.fill_main_information(self.main_information)
 		self.editor.save("docx/new_from_maket.docx")
+		self.label_file = Label(self.frame1,
+					text=filename,
+					font=("Arial Bold", 10),
+                                        fg="#000000",
+                                        bg="#ffffff")
+		self.label_file.place(relx=0.6, rely=0.65)
 
 	def page_1(self):
 		for i in self.master.winfo_children():
@@ -56,18 +62,14 @@ class app:
 			font=("Arial Bold", 15))
 		self.label_5.place(relx=0.05, rely=0.5)
 
-		self.label_3 = Label(self.frame1,
-							 text="Выберите файл",
-							 font=("Arial Bold", 15))
-		self.label_3.place(relx=0.7, rely=0.5)
-
 		self.btn_file = Button(self.frame1,
-							   text="Укажите файл",
+							   text="Выберите файл",
 							   bg="#7D6F86",
 							   font=("Arial Bold", 15),
 							   fg="#eee",
 							   command=self.request_file)
 		self.btn_file.place(relx=0.7, rely=0.55)
+
 
 		self.next_btn = ttk.Button(self.frame1,
 								   text="Далее",
