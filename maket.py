@@ -9,7 +9,7 @@ FQ = "1. Выберите файл\n2. Перейдите во вкладку '�
 
 class app:
 
-	editor = filler("docx/shablon.docx")
+	editor = filler("docx/shablon_test.docx")
 	local_parser = None
 	main_information = None
 	competitions = None
@@ -29,6 +29,7 @@ class app:
 		self.main_information = self.local_parser.get_main_information()
 		self.competitions = self.local_parser.get_comprtitions()
 		self.editor.fill_main_information(self.main_information)
+		self.editor.fill_competitions(self.competitions)
 		self.editor.save("docx/new_from_maket.docx")
 		self.label_file = Label(self.frame1,
 					text=filename,
