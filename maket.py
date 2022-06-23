@@ -13,6 +13,8 @@ class app:
 	local_parser = None
 	main_information = None
 	competitions = None
+	
+	var = 0
 
 	def __init__(self, master):
 		self.master = master
