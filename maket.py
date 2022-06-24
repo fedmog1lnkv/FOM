@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 from tkinter import filedialog
+import tkinter
 from filler import filler
 from parser import parser
 
@@ -11,15 +12,18 @@ def on_closing():
     if messagebox.askokcancel("Выход из приложения", "Хотите выйти из приложения?"):
         root.destroy()
 
-values = ("Конспект лекций", "Глоссарий по предмету", "Тест",
+
+
+
+class app:
+	all_forms = ("Конспект лекций", "Глоссарий по предмету", "Тест",
 		  "Устный опрос", "Доклад/презентация", "Реферат",
 		  "Эссе", "Контрольная работа", "Практическое задание",
 		  "Решение задач", "Лабороторная работа", "Проект",
 		  "Портфолио", "Выставка", "Деловая игра",
 		  "Конференция", "Олимпиада", "Онлайн - курс")
 
-
-class app:
+	forms = []
 
 	editor = filler("docx/shablon_test.docx")
 	local_parser = None
@@ -35,12 +39,9 @@ class app:
 	def request_file(self):
 		filename = filedialog.askopenfilename()
 		self.local_parser = parser(filename)
-		self.local_parser.go_parse()
 		self.main_information = self.local_parser.get_main_information()
 		self.competitions = self.local_parser.get_comprtitions()
-		self.editor.fill_main_information(self.main_information)
-		self.editor.save("docx/new_from_maket.docx")
-
+		
 		self.label_file = Label(self.frame1,
 					text=filename,
 					font=("Arial Bold", 10),
@@ -124,6 +125,9 @@ class app:
 		#self.re_info_4 = Entry(self.frame2, bg="#F1F1F1", fg="#000", font=("Arial Bold", 15))
 		#self.re_info_4.place(relx=0.55, rely=0.55)
 
+		self.list_of_forms = tkinter.Listbox(self.frame2, selectmode = tkinter.MULTIPLE)
+		self.list_of_forms.insert(0, *self.all_forms)
+		self.list_of_forms.place(relx=0.15, rely=0.55)
 
 		self.FAQ_btn = ttk.Button(self.frame2, text="Назад", command=self.page_1)
 		self.FAQ_btn.place(relx=0.25, rely=0.91, relwidth=0.15)
@@ -140,6 +144,15 @@ class app:
 		#self.submit.pack()
 
 	def page_2_1(self):
+		values = {'code' : self.re_info_code.get(), 'name' : self.re_info_name.get(), 'direction' : self.re_info_direction.get(), 'profile' : self.re_info_profile.get()}
+		indexes = self.list_of_forms.curselection()
+		for i in indexes:
+			self.forms.append(self.all_forms[i])
+		values['forms'] = self.forms
+
+		self.editor.fill_main_information(values)
+		self.editor.save("docx/new_from_maket.docx")
+
 		for i in self.master.winfo_children():
 			i.destroy()
 

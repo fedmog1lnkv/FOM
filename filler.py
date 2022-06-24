@@ -2,6 +2,8 @@ from msilib.schema import tables
 from tkinter.messagebox import NO
 from docx.enum.text import WD_COLOR_INDEX as colors
 from turtle import width
+
+from pip import main
 from parser import parser
 import docx
 
@@ -16,8 +18,14 @@ class filler:
 	def fill_main_information(self, main_information):
 		buf = ""
 		first_run = None
+		blue_run = None
 		for paragraph in self.doc.paragraphs:
 			for run in paragraph.runs:
+				if run.font.highlight_color == colors.BLUE:
+					if not(blue_run):
+						blue_run = run
+						run.font.highlight_color = colors.AUTO
+					run.text = ""
 				if run.font.highlight_color == colors.BRIGHT_GREEN:
 					buf += run.text
 					if (not(first_run)):
@@ -28,6 +36,10 @@ class filler:
 					first_run.font.highlight_color = colors.AUTO
 					buf = ""
 					first_run = None
+
+		for form in main_information['forms'][:-1]:
+			blue_run.text += form.lower() + ", "
+		blue_run.text += main_information['forms'][-1].lower()
 
 		for table in self.doc.tables:
 			for row in table.rows:
