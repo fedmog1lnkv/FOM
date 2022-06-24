@@ -2,8 +2,8 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 from tkinter import filedialog
-#from filler import filler
-#from parser import parser
+from filler import filler
+from parser import parser
 
 FQ = "1. Выберите файл\n2. Перейдите во вкладку 'Редактирование'\n3. Сделайте замену и подтвердите\n4. Всё готово, документ отредактирован\n1. Выберите файл\n2. Перейдите во вкладку 'Редактирование'\n3. Сделайте замену и подтвердите\n4. Всё готово, документ отредактирован"
 
@@ -21,10 +21,10 @@ values = ("Конспект лекций", "Глоссарий по предме
 
 class app:
 
-	#editor = filler("docx/shablon_test.docx")
-	#local_parser = None
-	#main_information = None
-	#competitions = None
+	editor = filler("docx/shablon_test.docx")
+	local_parser = None
+	main_information = None
+	competitions = None
 
 	def __init__(self, master):
 		self.master = master
@@ -32,20 +32,20 @@ class app:
 		self.master.geometry("800x600")
 		self.page_1()
 
-	#def request_file(self):
-	#	filename = filedialog.askopenfilename()
-	#	self.local_parser = parser(filename)
-	#	self.local_parser.go_parse()
-	#	self.main_information = self.local_parser.get_main_information()
-	#	self.competitions = self.local_parser.get_comprtitions()
-	#	self.editor.fill_main_information(self.main_information)
-	#	self.editor.save("docx/new_from_maket.docx")
-	#	self.label_file = Label(self.frame1,
-	#				text=filename,
-	#				font=("Arial Bold", 10),
-     #                                   fg="#000000",
-      #                                  bg="#ffffff")
-		#self.label_file.place(relx=0.6, rely=0.65)
+	def request_file(self):
+		filename = filedialog.askopenfilename()
+		self.local_parser = parser(filename)
+		self.local_parser.go_parse()
+		self.main_information = self.local_parser.get_main_information()
+		self.competitions = self.local_parser.get_comprtitions()
+		self.editor.fill_main_information(self.main_information)
+		self.editor.save("docx/new_from_maket.docx")
+		self.label_file = Label(self.frame1,
+					text=filename,
+					font=("Arial Bold", 10),
+                                       fg="#000000",
+                                      bg="#ffffff")
+		self.label_file.place(relx=0.6, rely=0.65)
 
 	def page_1(self):
 		for i in self.master.winfo_children():
@@ -64,7 +64,7 @@ class app:
 
 
 		self.btn_file = Button(self.frame1, text="Укажите файл", bg="#2A579A", font=("Arial Bold", 15), fg="#eee",
-							   #command=self.request_file
+							   command=self.request_file
 							   )
 		self.btn_file.place(relx=0.08, rely=0.7)
 
@@ -87,10 +87,10 @@ class app:
 		self.label_1 = Label(self.frame2, bg="#2A579A", fg="#eee", text="РПД(На гридах потом сделаю)", font=("Arial Bold", 25), justify=CENTER)
 		self.label_1.place(relwidth=1)
 
-		self.info_1 = Label(self.frame2, bg="#2A579A", text="Наименование дисциплины", fg="#eee", font=("Arial Bold", 15), justify=CENTER)
+		self.info_name = Label(self.frame2, bg="#2A579A", text="Наименование дисциплины", fg="#eee", font=("Arial Bold", 15), justify=CENTER)
 		self.info_1.place(relx=0.15, rely=0.15 )
 
-		self.re_info_1 = Label(self.frame2, bg="#F1F1F1", text="Основы программирования", fg="#000", font=("Arial Bold", 15), justify=CENTER)
+		self.re_info_name = Label(self.frame2, bg="#F1F1F1", text="Основы программирования", fg="#000", font=("Arial Bold", 15), justify=CENTER)
 		self.re_info_1.place(relx=0.55, rely=0.15)
 
 		self.info_2 = Label(self.frame2, bg="#2A579A", text="Направление подготовки", fg="#eee", font=("Arial Bold", 15), justify=CENTER)
