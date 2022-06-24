@@ -40,12 +40,15 @@ class app:
 		self.competitions = self.local_parser.get_comprtitions()
 		self.editor.fill_main_information(self.main_information)
 		self.editor.save("docx/new_from_maket.docx")
+
 		self.label_file = Label(self.frame1,
 					text=filename,
 					font=("Arial Bold", 10),
                                        fg="#000000",
                                       bg="#ffffff")
-		self.label_file.place(relx=0.6, rely=0.65)
+		self.label_file.place(relx=0.08, rely=0.8)
+
+
 
 	def page_1(self):
 		for i in self.master.winfo_children():
@@ -84,33 +87,42 @@ class app:
 		self.frame2 = Frame(self.master, bg="#E6E6E6", width=300, height=300)
 		self.frame2.place(relx=0, rely=0, relwidth=1, relheight=1)
 
-		self.label_1 = Label(self.frame2, bg="#2A579A", fg="#eee", text="РПД(На гридах потом сделаю)", font=("Arial Bold", 25), justify=CENTER)
+		self.label_1 = Label(self.frame2, bg="#2A579A", fg="#eee", text="РПД(На гридах потом сделаю)", font=("Arial Bold", 25))
 		self.label_1.place(relwidth=1)
 
-		self.info_name = Label(self.frame2, bg="#2A579A", text="Наименование дисциплины", fg="#eee", font=("Arial Bold", 15), justify=CENTER)
-		self.info_1.place(relx=0.15, rely=0.15 )
+		self.info_code = Label(self.frame2, bg="#2A579A", text="Код дисциплины", fg="#eee", font=("Arial Bold", 15), width="25")
+		self.info_code.place(relx=0.15, rely=0.15)
 
-		self.re_info_name = Label(self.frame2, bg="#F1F1F1", text="Основы программирования", fg="#000", font=("Arial Bold", 15), justify=CENTER)
-		self.re_info_1.place(relx=0.55, rely=0.15)
+		self.re_info_code = Entry(self.frame2, bg="#F1F1F1", fg="#000", font=("Arial Bold", 15))
+		self.re_info_code.place(relx=0.55, rely=0.15)
+		self.re_info_code.insert(0, self.main_information["code"])
 
-		self.info_2 = Label(self.frame2, bg="#2A579A", text="Направление подготовки", fg="#eee", font=("Arial Bold", 15), justify=CENTER)
-		self.info_2.place(relx=0.15, rely=0.25 )
+		self.info_name = Label(self.frame2, bg="#2A579A", text="Наименование дисциплины", fg="#eee", font=("Arial Bold", 15), width="25")
+		self.info_name.place(relx=0.15, rely=0.25 )
 
-		self.re_info_2 = Label(self.frame2, bg="#F1F1F1", text="Прикладная информатика", fg="#000", font=("Arial Bold", 15), justify=CENTER)
-		self.re_info_2.place(relx=0.55, rely=0.25)
+		self.re_info_name = Entry(self.frame2, bg="#F1F1F1", fg="#000", font=("Arial Bold", 15))
+		self.re_info_name.place(relx=0.55, rely=0.25)
+		self.re_info_name.insert(0, self.main_information["name"])
 
-		self.info_3 = Label(self.frame2, bg="#2A579A", text="Направленность подготовки", fg="#eee", font=("Arial Bold", 15), justify=CENTER)
-		self.info_3.place(relx=0.15, rely=0.35 )
+		self.info_direction = Label(self.frame2, bg="#2A579A", text="Профиль подготовки", fg="#eee", font=("Arial Bold", 15), width="25")
+		self.info_direction.place(relx=0.15, rely=0.35 )
 
-		self.re_info_3 = Label(self.frame2, bg="#F1F1F1", text="Разработка программного обеспечения", fg="#000", font=("Arial Bold", 15), justify=CENTER)
-		self.re_info_3.place(relx=0.55, rely=0.35)
+		self.re_info_direction = Entry(self.frame2, bg="#F1F1F1", fg="#000", font=("Arial Bold", 15))
+		self.re_info_direction.place(relx=0.55, rely=0.35)
+		self.re_info_direction.insert(0, self.main_information["direction"])
 
-		self.info_4 = Label(self.frame2, bg="#2A579A", text="Квалификация выпускника", fg="#eee", font=("Arial Bold", 15), justify=CENTER)
-		self.info_4.place(relx=0.15, rely=0.45 )
+		self.info_profile = Label(self.frame2, bg="#2A579A", text="Профиль подготовки", fg="#eee", font=("Arial Bold", 15), width="25")
+		self.info_profile.place(relx=0.15, rely=0.45 )
 
-		self.re_info_4 = Label(self.frame2, bg="#F1F1F1", text="Бакалавр", fg="#000", font=("Arial Bold", 15), justify=CENTER)
-		self.re_info_4.place(relx=0.55, rely=0.45)
+		self.re_info_profile = Entry(self.frame2, bg="#F1F1F1", fg="#000", font=("Arial Bold", 15))
+		self.re_info_profile.place(relx=0.55, rely=0.45)
+		self.re_info_profile.insert(0, self.main_information["profile"])
 
+		#self.info_4 = Label(self.frame2, bg="#2A579A", text="Квалификация выпускника", fg="#eee", font=("Arial Bold", 15), width="25")
+		#self.info_4.place(relx=0.15, rely=0.55 )
+
+		#self.re_info_4 = Entry(self.frame2, bg="#F1F1F1", fg="#000", font=("Arial Bold", 15))
+		#self.re_info_4.place(relx=0.55, rely=0.55)
 
 
 		self.FAQ_btn = ttk.Button(self.frame2, text="Назад", command=self.page_1)
