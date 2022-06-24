@@ -37,7 +37,7 @@ class parser:
 		
 	def get_comprtitions(self):
 		return self.competitions
-
+		
 	def print(self):
 		for row in self.file.tables[3].rows:
 			for cell in row.cells:

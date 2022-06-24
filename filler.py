@@ -13,9 +13,6 @@ class filler:
 	def __init__(self, filename):
 		self.doc = docx.Document(filename)
 	
-	def add_competition(self, competition):
-		pass
-
 	def fill_main_information(self, main_information):
 		buf = ""
 		first_run = None
@@ -49,10 +46,7 @@ class filler:
 								first_run = None
 
 	def fill_competitions(self, competitions):
-		saved_competitions = 0
 		table = self.doc.tables[4]
-
-		print(len(competitions))
 		for j in range(len(competitions)):
 			self.make_new_competition_section(table, len(competitions[j]['indicators']))
 			n = 0

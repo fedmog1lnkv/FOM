@@ -23,11 +23,13 @@ class app:
 	def request_file(self):
 		filename = filedialog.askopenfilename()
 		self.local_parser = parser(filename)
-		self.local_parser.go_parse()
-		self.main_information = self.local_parser.get_main_information()
+
 		self.competitions = self.local_parser.get_comprtitions()
+		self.main_information = self.local_parser.get_main_information()
+
 		self.editor.fill_main_information(self.main_information)
 		self.editor.fill_competitions(self.competitions)
+		
 		self.editor.save("docx/new_from_maket.docx")
 		self.label_file = Label(self.frame1,
 					text=filename,
