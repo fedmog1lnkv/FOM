@@ -8,6 +8,7 @@ class parser:
 
 	def __init__(self, filename):
 		self.file = docx.Document(filename)
+		self.go_parse()
 
 	def go_parse(self):
 		self.main_information["code"], self.main_information["name"] = self.file.tables[1].rows[0].cells[3].text.split(" ", 1)
@@ -46,9 +47,13 @@ class parser:
 	def find_competitions(self):
 		buf = {'index' : '', 'content' : '', 'indicators' : []}
 		for row in self.file.tables[3].rows[1:]:
-			buf['index'], buf['content'] = row.cells[0].text.split(" ", 1)
+			index, content = row.cells[0].text.split(" ", 1)
+			if buf['index'] == '' and buf['content'] == '':
+				buf['index'] = index
+				buf['content'] = content
+			elif buf['index'] != index:
+				self.competitions.append(buf)
+				buf = {'index' : '', 'content' : '', 'indicators' : []}
 			buf_indicator = (row.cells[1].text, row.cells[2].text)
 			buf['indicators'].append(buf_indicator)
 		self.competitions.append(buf)
-
-

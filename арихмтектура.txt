@@ -2,3 +2,11 @@
 	main_information: {'code': '', 'name' : '', 'direction' : '', 'profile' : ''}
 компитенции:
 	competitions: [{'index' : '', 'content' : '', 'indicators' : [(indicators[0], 'content'), (indicators[0], 'content'), ...]}, ...]
+
+
+document -> par -> run
+
+document.paragraphs = [] paragraphs.runs = [] run.text 
+document.tables = []
+
+tabl -> rows -> cell
