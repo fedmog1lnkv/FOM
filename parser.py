@@ -1,3 +1,4 @@
+from string import printable
 import docx
 
 
@@ -5,6 +6,7 @@ class parser:
 	file = None
 	main_information = {'code': '', 'name' : '', 'direction' : '', 'profile' : ''}
 	competitions = []
+	developers = []
 
 	def __init__(self, filename):
 		self.file = docx.Document(filename)
@@ -15,6 +17,7 @@ class parser:
 		self.main_information["direction"] = self.file.tables[1].rows[2].cells[1].text
 		self.main_information["profile"] = self.file.tables[1].rows[4].cells[4].text
 		self.find_competitions()
+		self.find_developers()
 
 		
 
@@ -37,6 +40,9 @@ class parser:
 		
 	def get_comprtitions(self):
 		return self.competitions
+	
+	def get_developers(self):
+		return self.developers
 		
 	def print(self):
 		for row in self.file.tables[3].rows:
@@ -57,3 +63,16 @@ class parser:
 			buf_indicator = (row.cells[1].text, row.cells[2].text)
 			buf['indicators'].append(buf_indicator)
 		self.competitions.append(buf)
+
+	def find_developers(self):
+		buf = {'post' : '', 'name' : ''}
+		for i in range(len(self.file.tables) - 1, 0, -1):
+			table = self.file.tables[i]
+			if len(table.rows[0].cells) == 5:
+				row = table.rows[0]
+				buf['post'] = row.cells[2].text
+				buf['name'] = row.cells[4].text
+				self.developers.append(buf)
+				buf = {'post' : '', 'name' : ''}
+			else:
+				break

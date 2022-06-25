@@ -2,7 +2,8 @@
 	main_information: {'code': '', 'name' : '', 'direction' : '', 'profile' : ''}
 компитенции:
 	competitions: [{'index' : '', 'content' : '', 'indicators' : [(indicators[0], 'content'), (indicators[0], 'content'), ...]}, ...]
-
+разработчики:
+	develpers: [{'post' : '', 'name' : ''}, ...]
 
 document -> par -> run
 

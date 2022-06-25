@@ -1,7 +1,8 @@
 from msilib.schema import tables
 from tkinter.messagebox import NO
 from docx.enum.text import WD_COLOR_INDEX as colors
-from turtle import width
+from turtle import position, width
+import copy
 
 from pip import main
 from parser import parser
@@ -58,7 +59,14 @@ class filler:
 								first_run = None
 
 	def fill_competitions(self, competitions):
-		table = self.doc.tables[4]
+		for table in self.doc.tables:
+			for row in table.rows:
+				for cell in row.cells:
+					if "Индекс" in cell.text:
+						current_table = table
+						break
+
+		table = current_table
 		for j in range(len(competitions)):
 			self.make_new_competition_section(table, len(competitions[j]['indicators']))
 			n = 0
@@ -78,5 +86,36 @@ class filler:
 				table.rows[-1].cells[1].merge(table.rows[-2].cells[1])
 				table.rows[-1].cells[2].merge(table.rows[-2].cells[2])
 
+	def fill_developers(self, developers):
+		table = self.doc.tables[3]
+
+		for i in range(len(self.doc.paragraphs)):
+			paragraph = self.doc.paragraphs[i]
+			if "developers" in paragraph.text:
+				paragraph.text = ""
+				id = i
+		table.rows[0].cells[1].text = developers[0]["name"] + ", " + developers[0]["post"]
+
+		if len(developers) > 1:
+			position = 4
+			for i in range(1, len(developers)):
+				self.copy_table(table, self.doc.paragraphs[id])
+				self.doc.tables[position].rows[0].cells[1].text = developers[i]["name"] + ", " + developers[i]["post"]
+				position += 1
+				id += 3
+
+	def copy_table(self, table, paragraph):
+		paragraph.text = ""
+		paragraph._p.addnext(copy.deepcopy(table._tbl))
+
 	def save(self, filename):
 		self.doc.save(filename)
+		
+
+
+a = filler("docx/shablon_test.docx")
+b = parser("docx/rpd.docx")
+a.fill_developers(b.get_developers())
+a.fill_competitions(b.get_comprtitions())
+a.fill_main_information(b.get_main_information())
+a.save("docx/new.docx")
