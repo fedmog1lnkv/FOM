@@ -113,9 +113,3 @@ class filler:
 		
 
 
-a = filler("docx/shablon_test.docx")
-b = parser("docx/rpd.docx")
-a.fill_developers(b.get_developers())
-a.fill_competitions(b.get_comprtitions())
-a.fill_main_information(b.get_main_information())
-a.save("docx/new.docx")
