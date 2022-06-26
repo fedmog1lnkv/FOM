@@ -121,21 +121,6 @@ class filler:
 
 	def save(self, filename):
 		self.doc.save(filename)
-		
-<<<<<<< HEAD
-<<<<<<< HEAD
-a = filler("docx/shablon_test.docx")
-b = parser("docx/rpd2.docx")
-b.find_themes()
-a.fill_developers(b.get_developers())
-a.fill_competitions(b.get_comprtitions())
-a.fill_themes(b.get_themes())
-a.save("docx/new.docx")
-=======
 
 
->>>>>>> 0cff4391816b80ce948247c74119e36019fdd884
-=======
 
-
->>>>>>> 0cff4391816b80ce948247c74119e36019fdd884
