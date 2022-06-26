@@ -7,6 +7,7 @@ class parser:
 	main_information = {'code': '', 'name' : '', 'direction' : '', 'profile' : ''}
 	competitions = []
 	developers = []
+	themes = []
 
 	def __init__(self, filename):
 		self.file = docx.Document(filename)
@@ -76,3 +77,20 @@ class parser:
 				buf = {'post' : '', 'name' : ''}
 			else:
 				break
+
+	def find_themes(self):
+		buf = {'index' : '', 'name' : ''}
+		for f_table in self.file.tables:
+			if "Раздел дисциплины/темы" in f_table.rows[0].cells[1].text:
+				table = f_table
+				break
+		for row in table.rows[3:-1]:
+			buf['index'], buf['name'] = row.cells[0].text, row.cells[1].text
+			if buf['index'] and buf['name']:
+				self.themes.append(buf)
+			buf = {'index' : '', 'name' : ''}
+		
+	def get_themes(self):
+		return self.themes
+		
+		

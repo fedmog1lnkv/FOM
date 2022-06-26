@@ -1,9 +1,11 @@
 онсновная информация:
 	main_information: {'code': '', 'name' : '', 'direction' : '', 'profile' : ''}
 компитенции:
-	competitions: [{'index' : '', 'content' : '', 'indicators' : [(indicators[0], 'content'), (indicators[0], 'content'), ...]}, ...]
+	competitions: [{'index' : '', 'content' : '', 'indicators' : [('indicators', 'content'), ('indicator', 'content'), ...], 'forms' : [forms[0], forms[1], ...]}, ...]
 разработчики:
 	develpers: [{'post' : '', 'name' : ''}, ...]
+темы:
+	themes: [{'index' : '', 'name' : ''}, ...]
 
 document -> par -> run
 

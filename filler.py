@@ -1,4 +1,5 @@
 from msilib.schema import tables
+from textwrap import indent
 from tkinter.messagebox import NO
 from docx.enum.text import WD_COLOR_INDEX as colors
 from turtle import position, width
@@ -108,14 +109,23 @@ class filler:
 		paragraph.text = ""
 		paragraph._p.addnext(copy.deepcopy(table._tbl))
 
+	def fill_themes(self, themes):
+		
+		for f_table in self.doc.tables:
+			if "Тема или раздел" in f_table.rows[0].cells[0].text:
+				table = f_table
+
+		for item in themes:
+			table.add_row()
+			table.rows[-1].cells[0].text = item['index'] + " " + item['name']
+
 	def save(self, filename):
 		self.doc.save(filename)
 		
-
-
 a = filler("docx/shablon_test.docx")
-b = parser("docx/rpd.docx")
+b = parser("docx/rpd2.docx")
+b.find_themes()
 a.fill_developers(b.get_developers())
 a.fill_competitions(b.get_comprtitions())
-a.fill_main_information(b.get_main_information())
+a.fill_themes(b.get_themes())
 a.save("docx/new.docx")
