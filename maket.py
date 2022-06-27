@@ -475,7 +475,7 @@ class app:
                 self.compl2_learning_outcomes.insert(1.0, self.competitions[i]['indicators'][1][1])
                 self.compl3_learning_outcomes.insert(1.0, self.competitions[i]['indicators'][2][1])
         if i + 1 == len(self.competitions):
-            self.next_table_btn.config(command=self.page_4, text="всё")
+            self.next_table_btn.config(command=self.end_page_3, text="всё")
 
     def competence_to_interface_back(self):
         if self.i > 0:
@@ -497,9 +497,9 @@ class app:
             self.i += 1
             self.write_competence(self.i)
             if self.i + 1 == len(self.competitions):
-                self.next_table_btn.config(command=self.page_4, text="всё")
+                self.next_table_btn.config(command=self.end_page_3, text="всё")
         else:
-            self.next_table_btn.config(command=self.page_4, text="всё")
+            self.next_table_btn.config(command=self.end_page_3, text="всё")
 
 
     def page_FAQ(self):
@@ -609,11 +609,19 @@ class app:
             self.frame3, text="Вернуться в начало", command=self.page_1
         )
         self.next_btn.place(relx=0.65, rely=0.91, relwidth=0.15)
+    def end_page_3(self):
+        if self.i < len(self.competitions):
+            if len(self.competitions[self.i]['indicators']) == 2:
+                self.evalutions_tools.append([self.compl1_evaluation_tool.get(), self.compl2_evaluation_tool.get()])
+            if len(self.competitions[self.i]['indicators']) == 3:
+                self.evalutions_tools.append([self.compl1_evaluation_tool.get(), self.compl2_evaluation_tool.get(),
+                                              self.compl3_evaluation_tool.get()])
+        self.page_4()
 
     def page_4(self):
         for i in self.master.winfo_children():
             i.destroy()
-
+        print(self.evalutions_tools)
         for i in range(len(self.competitions)):
             for j in range(len(self.competitions[i]['indicators'])):
                 self.competitions[i]['indicators'][j] = (self.competitions[i]['indicators'][j][0], self.competitions[i]['indicators'][j][1], self.evalutions_tools[i][j])
