@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="439d788a-33b6-4ced-887e-4f5d3bec449c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/docx/new.docx" beforeDir="false" afterPath="$PROJECT_DIR$/docx/new.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docx/new_from_maket.docx" beforeDir="false" afterPath="$PROJECT_DIR$/docx/new_from_maket.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docx/shablon.docx" beforeDir="false" afterPath="$PROJECT_DIR$/docx/shablon.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docx/~$ablon_test.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docx/~$new.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docx/~$rpd.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docx/~$rpd2.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docx/~$w_from_maket.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maket.py" beforeDir="false" afterPath="$PROJECT_DIR$/maket.py" afterDir="false" />
+    </list>
+    <list id="21ddb62d-87d7-40ca-b26d-4693b580182a" name="Changes by dan03" comment="">
       <change beforePath="$PROJECT_DIR$/filler.py" beforeDir="false" afterPath="$PROJECT_DIR$/filler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maket.py" beforeDir="false" afterPath="$PROJECT_DIR$/maket.py" afterDir="false" />
     </list>
@@ -15,10 +22,58 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/filler.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/maket.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/maket.py">
+      <ranges>
+        <range start1="19" end1="25" start2="19" end2="39" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="32" end1="32" start2="46" end2="54" changelist="21ddb62d-87d7-40ca-b26d-4693b580182a" />
+        <range start1="36" end1="37" start2="58" end2="59" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="45" end1="50" start2="67" end2="74" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="59" end1="61" start2="83" end2="91" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="62" end1="65" start2="92" end2="100" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="67" end1="70" start2="102" end2="110" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="86" end1="86" start2="126" end2="127" changelist="21ddb62d-87d7-40ca-b26d-4693b580182a" />
+        <range start1="95" end1="98" start2="136" end2="144" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="99" end1="101" start2="145" end2="153" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="103" end1="104" start2="155" end2="158" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="107" end1="109" start2="161" end2="169" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="111" end1="112" start2="171" end2="174" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="115" end1="117" start2="177" end2="185" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="119" end1="120" start2="187" end2="190" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="123" end1="125" start2="193" end2="201" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="127" end1="128" start2="203" end2="206" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="131" end1="133" start2="209" end2="217" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="135" end1="136" start2="219" end2="227" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="144" end1="146" start2="235" end2="241" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="150" end1="151" start2="245" end2="246" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="152" end1="153" start2="247" end2="248" changelist="21ddb62d-87d7-40ca-b26d-4693b580182a" />
+        <range start1="159" end1="159" start2="254" end2="347" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="160" end1="160" start2="348" end2="357" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="161" end1="162" start2="358" end2="505" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="168" end1="170" start2="511" end2="519" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="172" end1="175" start2="521" end2="529" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="181" end1="183" start2="535" end2="543" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="189" end1="191" start2="549" end2="557" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="198" end1="200" start2="564" end2="572" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="206" end1="208" start2="578" end2="586" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="211" end1="214" start2="589" end2="592" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="217" end1="219" start2="595" end2="597" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="222" end1="224" start2="600" end2="602" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="229" end1="230" start2="607" end2="610" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="233" end1="233" start2="613" end2="635" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="238" end1="241" start2="640" end2="643" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="242" end1="245" start2="644" end2="647" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="246" end1="249" start2="648" end2="649" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+        <range start1="251" end1="252" start2="651" end2="653" changelist="21ddb62d-87d7-40ca-b26d-4693b580182a" />
+        <range start1="254" end1="257" start2="655" end2="655" changelist="439d788a-33b6-4ced-887e-4f5d3bec449c" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -32,7 +87,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ToolWindowRun.ShowToolbar": "false"
+    "ToolWindowRun.ShowToolbar": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "settings.editor.selected.configurable": "CodeWithMe"
   }
 }]]></component>
   <component name="RunManager" selected="Python.maket">
@@ -95,5 +152,27 @@
       <updated>1656171917992</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

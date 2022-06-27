@@ -77,6 +77,7 @@ class filler:
 				table.rows[i].cells[2].text = competitions[j]["content"]
 				table.rows[i].cells[3].text = competitions[j]["indicators"][n][0]
 				table.rows[i].cells[4].text = competitions[j]["indicators"][n][1]
+				table.rows[i].cells[5].text = competitions[j]["indicators"][n][2]
 				n += 1
 
 	def make_new_competition_section(self, table, size):
