@@ -5,7 +5,7 @@ import docx
 class parser:
 	file = None
 	main_information = {'code': '', 'name' : '', 'direction' : '', 'profile' : ''}
-	competitions = []
+	competences = []
 	developers = []
 	themes = []
 
@@ -17,7 +17,7 @@ class parser:
 		self.main_information["code"], self.main_information["name"] = self.file.tables[1].rows[0].cells[3].text.split(" ", 1)
 		self.main_information["direction"] = self.file.tables[1].rows[2].cells[1].text
 		self.main_information["profile"] = self.file.tables[1].rows[4].cells[4].text
-		self.find_competitions()
+		self.find_competences()
 		self.find_developers()
 
 		
@@ -27,20 +27,20 @@ class parser:
 			print(self.main_information[info])
 		print()
 		print()
-		for competition in self.competitions:
-			for key in competition:
+		for competence in self.competences:
+			for key in competence:
 				if key == "indicators":
-					for item in competition[key]:
+					for item in competence[key]:
 						print(item[0])
 						print(item[1])
-				print(competition[key])
+				print(competence[key])
 			print()
 
 	def get_main_information(self):
 		return self.main_information
 		
 	def get_comprtitions(self):
-		return self.competitions
+		return self.competences
 	
 	def get_developers(self):
 		return self.developers
@@ -51,7 +51,7 @@ class parser:
 				print(cell.text)
 			print()
 
-	def find_competitions(self):
+	def find_competences(self):
 		buf = {'index' : '', 'content' : '', 'indicators' : []}
 		for row in self.file.tables[3].rows[1:]:
 			index, content = row.cells[0].text.split(" ", 1)
@@ -59,11 +59,11 @@ class parser:
 				buf['index'] = index
 				buf['content'] = content
 			elif buf['index'] != index:
-				self.competitions.append(buf)
+				self.competences.append(buf)
 				buf = {'index' : '', 'content' : '', 'indicators' : []}
 			buf_indicator = (row.cells[1].text, row.cells[2].text)
 			buf['indicators'].append(buf_indicator)
-		self.competitions.append(buf)
+		self.competences.append(buf)
 
 	def find_developers(self):
 		buf = {'post' : '', 'name' : ''}

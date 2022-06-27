@@ -43,7 +43,7 @@ class app:
     editor = filler("docx/shablon_test.docx")
     local_parser = None
     main_information = None
-    competitions = None
+    competences = None
     evalutions_tools = []
     values = {
         "code": '',
@@ -63,7 +63,7 @@ class app:
         filename = filedialog.askopenfilename()
         self.local_parser = parser(filename)
         self.main_information = self.local_parser.get_main_information()
-        self.competitions = self.local_parser.get_comprtitions()
+        self.competences = self.local_parser.get_comprtitions()
 
         self.label_file = Label(
             self.frame1,
@@ -443,38 +443,38 @@ class app:
 
 
     def write_competence(self, i):
-        if i < len(self.competitions) :
+        if i < len(self.competences) :
             self.compl_number_pp.config(text = str(self.i + 1))
-            self.compl_index_competence.config(text = self.competitions[i]['index'])
-            self.compl_content_competence.insert(1.0, self.competitions[i]['content'])
-            if len(self.competitions[i]['indicators']) == 2:
+            self.compl_index_competence.config(text = self.competences[i]['index'])
+            self.compl_content_competence.insert(1.0, self.competences[i]['content'])
+            if len(self.competences[i]['indicators']) == 2:
                 if self.third_line:
                     self.compl3_index_content_competence.grid_forget()
                     self.compl3_learning_outcomes.grid_forget()
                     self.compl3_evaluation_tool.grid_forget()
                     self.third_line = False
 
-                self.compl1_index_content_competence.config(text = self.competitions[i]['indicators'][0][0])
-                self.compl2_index_content_competence.config(text = self.competitions[i]['indicators'][1][0])
+                self.compl1_index_content_competence.config(text = self.competences[i]['indicators'][0][0])
+                self.compl2_index_content_competence.config(text = self.competences[i]['indicators'][1][0])
 
-                self.compl1_learning_outcomes.insert(1.0, self.competitions[i]['indicators'][0][1])
-                self.compl2_learning_outcomes.insert(1.0, self.competitions[i]['indicators'][1][1])
+                self.compl1_learning_outcomes.insert(1.0, self.competences[i]['indicators'][0][1])
+                self.compl2_learning_outcomes.insert(1.0, self.competences[i]['indicators'][1][1])
 
-            elif len(self.competitions[i]['indicators']) == 3:
+            elif len(self.competences[i]['indicators']) == 3:
                 if not(self.third_line):
                     self.compl3_index_content_competence.grid()
                     self.compl3_learning_outcomes.grid()
                     self.compl3_evaluation_tool.grid()
                     self.third_line = True
 
-                self.compl1_index_content_competence.config(text=self.competitions[i]['indicators'][0][0])
-                self.compl2_index_content_competence.config(text=self.competitions[i]['indicators'][1][0])
-                self.compl3_index_content_competence.config(text=self.competitions[i]['indicators'][2][0])
+                self.compl1_index_content_competence.config(text=self.competences[i]['indicators'][0][0])
+                self.compl2_index_content_competence.config(text=self.competences[i]['indicators'][1][0])
+                self.compl3_index_content_competence.config(text=self.competences[i]['indicators'][2][0])
 
-                self.compl1_learning_outcomes.insert(1.0, self.competitions[i]['indicators'][0][1])
-                self.compl2_learning_outcomes.insert(1.0, self.competitions[i]['indicators'][1][1])
-                self.compl3_learning_outcomes.insert(1.0, self.competitions[i]['indicators'][2][1])
-        if i + 1 == len(self.competitions):
+                self.compl1_learning_outcomes.insert(1.0, self.competences[i]['indicators'][0][1])
+                self.compl2_learning_outcomes.insert(1.0, self.competences[i]['indicators'][1][1])
+                self.compl3_learning_outcomes.insert(1.0, self.competences[i]['indicators'][2][1])
+        if i + 1 == len(self.competences):
             self.next_table_btn.config(command=self.end_page_3, text="всё")
 
     def competence_to_interface_back(self):
@@ -483,20 +483,20 @@ class app:
             self.i -= 1
             self.write_competence(self.i)
 
-        if self.i + 1 < len(self.competitions):
+        if self.i + 1 < len(self.competences):
             self.next_table_btn.config(command=self.competence_to_interface_next, text="Далее по таблице")
 
     def competence_to_interface_next(self):
-        if self.i < len(self.competitions):
-            if len(self.competitions[self.i]['indicators']) == 2:
+        if self.i < len(self.competences):
+            if len(self.competences[self.i]['indicators']) == 2:
                 self.evalutions_tools.append([self.compl1_evaluation_tool.get(), self.compl2_evaluation_tool.get()])
-            if len(self.competitions[self.i]['indicators']) == 3:
+            if len(self.competences[self.i]['indicators']) == 3:
                 self.evalutions_tools.append([self.compl1_evaluation_tool.get(), self.compl2_evaluation_tool.get(),
                                               self.compl3_evaluation_tool.get()])
-        if self.i + 1 < len(self.competitions):
+        if self.i + 1 < len(self.competences):
             self.i += 1
             self.write_competence(self.i)
-            if self.i + 1 == len(self.competitions):
+            if self.i + 1 == len(self.competences):
                 self.next_table_btn.config(command=self.end_page_3, text="всё")
         else:
             self.next_table_btn.config(command=self.end_page_3, text="всё")
@@ -610,10 +610,10 @@ class app:
         )
         self.next_btn.place(relx=0.65, rely=0.91, relwidth=0.15)
     def end_page_3(self):
-        if self.i < len(self.competitions):
-            if len(self.competitions[self.i]['indicators']) == 2:
+        if self.i < len(self.competences):
+            if len(self.competences[self.i]['indicators']) == 2:
                 self.evalutions_tools.append([self.compl1_evaluation_tool.get(), self.compl2_evaluation_tool.get()])
-            if len(self.competitions[self.i]['indicators']) == 3:
+            if len(self.competences[self.i]['indicators']) == 3:
                 self.evalutions_tools.append([self.compl1_evaluation_tool.get(), self.compl2_evaluation_tool.get(),
                                               self.compl3_evaluation_tool.get()])
         self.page_4()
@@ -622,11 +622,11 @@ class app:
         for i in self.master.winfo_children():
             i.destroy()
         print(self.evalutions_tools)
-        for i in range(len(self.competitions)):
-            for j in range(len(self.competitions[i]['indicators'])):
-                self.competitions[i]['indicators'][j] = (self.competitions[i]['indicators'][j][0], self.competitions[i]['indicators'][j][1], self.evalutions_tools[i][j])
+        for i in range(len(self.competences)):
+            for j in range(len(self.competences[i]['indicators'])):
+                self.competences[i]['indicators'][j] = (self.competences[i]['indicators'][j][0], self.competences[i]['indicators'][j][1], self.evalutions_tools[i][j])
 
-        self.editor.fill_competitions(self.competitions)
+        self.editor.fill_competences(self.competences)
         self.frame4 = Frame(self.master, width=300, height=300)
         self.frame4.place(relx=0, rely=0, relwidth=1, relheight=1)
         self.new_file = ttk.Label(
