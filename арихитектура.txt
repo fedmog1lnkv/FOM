@@ -1,0 +1,17 @@
+онсновная информация:
+	main_information: {'code': '', 'name' : '', 'direction' : '', 'profile' : ''}
+компитенции:
+	competences: [{'index' : '', 'content' : '', 'indicators' : [('indicators', 'content'), ('indicator', 'content'), ...], 'forms' : [forms[0], forms[1], ...]}, ...]
+разработчики:
+	develpers: [{'post' : '', 'name' : ''}, ...]
+темы:
+	themes: [{'index' : '', 'name' : ''}, ...]
+темы_таблица:
+	themes: [{'index' : '', 'name' : '', 'indicators' : [], 'planned_result' : [], 'indicator' : '', 'evaluation_criteria' : '', 'name_os' : '', 'tk' : ''}, ...]
+
+document -> par -> run
+
+document.paragraphs = [] paragraphs.runs = [] run.text 
+document.tables = []
+
+tabl -> rows -> cell

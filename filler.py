@@ -116,9 +116,19 @@ class filler:
 			if "Тема или раздел" in f_table.rows[0].cells[0].text:
 				table = f_table
 
-		for item in themes:
+		for theme in themes:
 			table.add_row()
-			table.rows[-1].cells[0].text = item['index'] + " " + item['name']
+			table.rows[-1].cells[0].text = theme['index'] + " " + theme['name']
+			
+			for item in theme['indicators']:
+				table.rows[-1].cells[1].text += item + '\n'
+			for item in theme['planned_result']:
+				table.rows[-1].cells[2].text += item + '\n'
+
+			table.rows[-1].cells[3].text = theme['indicator']
+			table.rows[-1].cells[4].text = theme['evaluation_criteria']
+			table.rows[-1].cells[5].text = theme['name_os']
+			table.rows[-1].cells[6].text = theme['tk']
 
 	def save(self, filename):
 		self.doc.save(filename)

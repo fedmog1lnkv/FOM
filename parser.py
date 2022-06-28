@@ -14,13 +14,15 @@ class parser:
 		self.go_parse()
 
 	def go_parse(self):
+		self.find_competences()
+		self.find_developers()
+		self.find_main_information()
+		self.find_themes()
+
+	def find_main_information(self):
 		self.main_information["code"], self.main_information["name"] = self.file.tables[1].rows[0].cells[3].text.split(" ", 1)
 		self.main_information["direction"] = self.file.tables[1].rows[2].cells[1].text
 		self.main_information["profile"] = self.file.tables[1].rows[4].cells[4].text
-		self.find_competences()
-		self.find_developers()
-
-		
 
 	def print_inform(self):
 		for info in self.main_information:
@@ -39,7 +41,7 @@ class parser:
 	def get_main_information(self):
 		return self.main_information
 		
-	def get_comprtitions(self):
+	def get_competences(self):
 		return self.competences
 	
 	def get_developers(self):
@@ -85,12 +87,21 @@ class parser:
 				table = f_table
 				break
 		for row in table.rows[3:-1]:
-			buf['index'], buf['name'] = row.cells[0].text, row.cells[1].text
-			if buf['index'] and buf['name']:
-				self.themes.append(buf)
-			buf = {'index' : '', 'name' : ''}
+			if row.cells[0].text:
+				if row.cells[0].text[-1] == '.' or not('.' in row.cells[0].text):
+					buf['index'], buf['name'] = row.cells[0].text, row.cells[1].text
+					if buf['index'][-1] == '.':
+						buf['index'] = buf['index'][:-1]
+					if buf['index'] and buf['name']:
+						self.themes.append(buf)
+					buf = {'index' : '', 'name' : ''}
 		
 	def get_themes(self):
 		return self.themes
-		
-		
+	
+	def get_idks(self):
+		idks = []
+		for compitence in self.competences:
+			for item in compitence["indicators"]:
+				idks.append((item[0], item[1]))
+		return idks
