@@ -81,7 +81,7 @@ class parser:
 				break
 
 	def find_themes(self):
-		buf = {'index' : '', 'name' : ''}
+		buf = {'index' : '', 'name' : '', }
 		for f_table in self.file.tables:
 			if "Раздел дисциплины/темы" in f_table.rows[0].cells[1].text:
 				table = f_table
@@ -105,3 +105,10 @@ class parser:
 			for item in compitence["indicators"]:
 				idks.append((item[0], item[1]))
 		return idks
+
+	def clear(self):
+		print("Почистили")
+		self.main_information.clear()
+		self.competences.clear()
+		self.developers.clear()
+		self.themes.clear()

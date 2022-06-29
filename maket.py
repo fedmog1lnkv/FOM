@@ -126,6 +126,10 @@ class app:
 		self.next_btn = ttk.Button(self.frame1, text="Далее", command=self.page_2)
 		self.next_btn.place(relx=0.65, rely=0.91, relwidth=0.15)
 
+	def open_page_1(self):
+		self.local_parser.clear()
+		self.page_1()
+
 	def page_2(self):
 		self.values['forms'].clear()
 		for i in self.master.winfo_children():
@@ -134,7 +138,7 @@ class app:
 		self.frame2 = Frame(self.master, bg="#E6E6E6", width=300, height=300)
 		self.frame2.place(relx=0, rely=0, relwidth=1, relheight=1)
 
-		self.back_btn = ttk.Button(self.frame2, text="Назад", command=self.page_1)
+		self.back_btn = ttk.Button(self.frame2, text="Назад", command=self.open_page_1)
 		self.back_btn.place(relx=0.25, rely=0.91, relwidth=0.15)
 
 		self.header = Label(
@@ -247,9 +251,6 @@ class app:
 		for i in indexes:
 			self.forms.append(self.all_forms[i])
 		self.values["forms"] = self.forms
-
-		self.editor.fill_main_information(self.values)
-		self.editor.fill_developers(self.local_parser.get_developers())
 
 		for i in self.master.winfo_children():
 			i.destroy()
@@ -469,9 +470,9 @@ class app:
 
 			elif len(self.competences[i]['indicators']) == 3:
 				if not(self.third_line):
-					self.compl3_index_content_competence.grid()
-					self.compl3_learning_outcomes.grid()
-					self.compl3_evaluation_tool.grid()
+					self.compl3_index_content_competence.grid(row=3, column=3, padx=3)
+					self.compl3_learning_outcomes.grid(row=3, column=4, padx=3, pady=3)
+					self.compl3_evaluation_tool.grid(row=3, column=5, padx=3, ipadx = 2, ipady = 2)
 					self.third_line = True
 
 				self.compl1_index_content_competence.config(text=self.competences[i]['indicators'][0][0])
@@ -746,13 +747,11 @@ class app:
 	def page_5(self):
 		for i in self.master.winfo_children():
 			i.destroy()
-		self.editor.fill_themes(self.themes)
 		
 		for i in range(len(self.competences)):
 			for j in range(len(self.competences[i]['indicators'])):
 				self.competences[i]['indicators'][j] = (self.competences[i]['indicators'][j][0], self.competences[i]['indicators'][j][1], self.evalutions_tools[i][j])
 
-		self.editor.fill_competences(self.competences)
 		self.frame4 = Frame(self.master, width=300, height=300)
 		self.frame4.place(relx=0, rely=0, relwidth=1, relheight=1)
 		self.message = ttk.Label(
@@ -768,12 +767,12 @@ class app:
 		)
 		self.page1_btn.pack()
 		self.page1_btn = ttk.Button(
-			self.frame4, text="Вернуться в начало", command=self.page_1
+			self.frame4, text="Вернуться в начало", command=self.open_page_1
 		)
 		self.page1_btn.pack()
 		self.quit_btn = ttk.Button(self.frame4, text="Выход", command=self.close_app)
 		self.quit_btn.pack()
-		
+
 	def save_file(self):
 		if self.new_file_name.get() != "":
 			if not(".docx" in self.new_file_name.get()) and "." in self.new_file_name.get():
@@ -790,6 +789,12 @@ class app:
 		else:
 			self.message.config(text = "Вы ну указали имя файла")
 
+	def save_all(self):
+		self.editor.fill_main_information(self.values)
+		self.editor.fill_developers(self.local_parser.get_developers())
+		self.editor.fill_competences(self.competences)
+		self.editor.fill_themes(self.themes)
+
 	def page_6(self):
 		for i in self.master.winfo_children():
 			i.destroy()
@@ -801,7 +806,7 @@ class app:
 		)
 		self.new_file.pack(expand=1)
 		self.page1_btn = ttk.Button(
-			self.frame4, text="Вернуться в начало", command=self.page_1
+			self.frame4, text="Вернуться в начало", command=self.open_page_1
 		)
 		self.page1_btn.pack()
 		self.quit_btn = ttk.Button(self.frame4, text="Выход", command=self.close_app)
@@ -911,12 +916,11 @@ class app:
 		self.FAQ_btn.place(relx=0.25, rely=0.91, relwidth=0.15)
 
 		self.next_btn = ttk.Button(
-			self.frame3, text="Вернуться в начало", command=self.page_1
+			self.frame3, text="Вернуться в начало", command=self.open_page_1
 		)
 		self.next_btn.place(relx=0.65, rely=0.91, relwidth=0.15)
 
 	def close_app(self):
-		self.editor.save("docx/new_from_maket.docx")
 		root.destroy()
 
 
