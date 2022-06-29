@@ -755,16 +755,40 @@ class app:
 		self.editor.fill_competences(self.competences)
 		self.frame4 = Frame(self.master, width=300, height=300)
 		self.frame4.place(relx=0, rely=0, relwidth=1, relheight=1)
-		self.new_file = ttk.Label(
+		self.message = ttk.Label(
 			self.frame4, text="ещё есть над чем работать", font=("Arial Bold", 25)
 		)
-		self.new_file.pack(expand=1)
+		self.message.pack(expand=1)
+		self.new_file_name = Entry(
+			self.frame4, font=("Arial Bold", 25)
+		)
+		self.new_file_name.pack()
+		self.page1_btn = ttk.Button(
+			self.frame4, text="Сохранить", command=self.save_file
+		)
+		self.page1_btn.pack()
 		self.page1_btn = ttk.Button(
 			self.frame4, text="Вернуться в начало", command=self.page_1
 		)
 		self.page1_btn.pack()
 		self.quit_btn = ttk.Button(self.frame4, text="Выход", command=self.close_app)
 		self.quit_btn.pack()
+		
+	def save_file(self):
+		if self.new_file_name.get() != "":
+			if not(".docx" in self.new_file_name.get()) and "." in self.new_file_name.get():
+				self.message.config(text = "Укажите расширение docx")
+			elif not(".docx" in self.new_file_name.get()) and not("." in self.new_file_name.get()):
+				directory = filedialog.askdirectory()
+				self.editor.save(directory + self.new_file_name.get() + ".docx")
+				self.message.config(text = "Файл сохранён")
+				self.page_6()
+			else:
+				directory = filedialog.askdirectory()
+				self.editor.save(directory + self.new_file_name.get())
+				self.page_6()
+		else:
+			self.message.config(text = "Вы ну указали имя файла")
 
 	def page_6(self):
 		for i in self.master.winfo_children():
