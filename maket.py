@@ -59,6 +59,7 @@ class app:
 		self.master = master
 		self.master.title("ФОНД ОЦЕНОЧНЫХ МАТЕРИАЛОВ")
 		self.master.geometry("1200x700")
+		self.master.resizable(width=False, height=False)
 		self.page_1()
 
 	def request_file(self):
@@ -225,7 +226,7 @@ class app:
 			height=9,
 			bg="#f1f1f1",
 			font=("Arial Bold", 12),
-			selectmode=tkinter.MULTIPLE,
+			selectmode=tkinter.MULTIPLE
 		)
 		self.list_of_forms.insert(0, *self.all_forms)
 		self.list_of_forms.place(relx=0.55, rely=0.55)
@@ -332,7 +333,7 @@ class app:
 		self.evaluation_tool.grid(row=0, column=5, padx=6)
 
 #таблица
-		######################################################
+
 		self.i = 0
 		self.third_line = True
 
@@ -354,7 +355,7 @@ class app:
 			fg="#eee",
 			font=("Arial Bold", 13),
 			width=7,
-                        height = 2
+            height = 2
 		)
 		self.compl_index_competence.grid(row=1, rowspan=3, column=1, padx=3)
 
@@ -477,7 +478,7 @@ class app:
 				self.compl2_learning_outcomes.insert(1.0, self.competences[i]['indicators'][1][1])
 				self.compl3_learning_outcomes.insert(1.0, self.competences[i]['indicators'][2][1])
 		if i + 1 == len(self.competences):
-			self.next_table_btn.config(command=self.end_page_3, text="всё")
+			self.next_table_btn.config(command=self.end_page_3, text="Далее")
 
 	def competence_to_interface_back(self):
 		if self.i > 0:
@@ -499,9 +500,9 @@ class app:
 			self.i += 1
 			self.write_competence(self.i)
 			if self.i + 1 == len(self.competences):
-				self.next_table_btn.config(command=self.end_page_3, text="всё")
+				self.next_table_btn.config(command=self.end_page_3, text="Далее")
 		else:
-			self.next_table_btn.config(command=self.end_page_3, text="всё")
+			self.next_table_btn.config(command=self.end_page_3, text="Далее")
 
 
 
@@ -706,9 +707,9 @@ class app:
 			self.i += 1
 			self.write_themes(self.i)
 			if self.i + 1 == len(self.themes):
-				self.next_table_themes_btn.config(command = self.end_page_4, text = "Всё")
+				self.next_table_themes_btn.config(command = self.end_page_4, text = "Далее")
 		else:
-			self.next_table_themes_btn.config(command = self.end_page_4, text = "Всё")
+			self.next_table_themes_btn.config(command = self.end_page_4, text = "Далее")
 
 	def themes_table_back(self):
 		if self.i > 0:
