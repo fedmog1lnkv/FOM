@@ -119,7 +119,7 @@ class app:
 		self.quit_btn = ttk.Button(self.frame1, text="Выход", command=self.close_app)
 		self.quit_btn.place(relx=0.25, rely=0.91, relwidth=0.15)
 
-		self.FAQ_btn = ttk.Button(self.frame1, text="О нас", command=self.page_3)
+		self.FAQ_btn = ttk.Button(self.frame1, text="О нас", command=self.page_FAQ)
 		self.FAQ_btn.place(relx=0.45, rely=0.91, relwidth=0.15)
 
 		self.next_btn = ttk.Button(self.frame1, text="Далее", command=self.page_2)
@@ -151,12 +151,12 @@ class app:
 			text="Код дисциплины",
 			fg="#eee",
 			font=("Arial Bold", 15),
-			width="25",
+			width="30",
 		)
 		self.info_code.place(relx=0.15, rely=0.15)
 
 		self.re_info_code = Entry(
-			self.frame2, bg="#F1F1F1", fg="#000", width=24, font=("Arial Bold", 15)
+			self.frame2, bg="#F1F1F1", fg="#000", width=30, font=("Arial Bold", 15)
 		)
 		self.re_info_code.place(relx=0.55, rely=0.15)
 		self.re_info_code.insert(0, self.main_information["code"])
@@ -167,12 +167,12 @@ class app:
 			text="Наименование дисциплины",
 			fg="#eee",
 			font=("Arial Bold", 15),
-			width=25,
+			width=30,
 		)
 		self.info_name.place(relx=0.15, rely=0.25)
 
 		self.re_info_name = Entry(
-			self.frame2, bg="#F1F1F1", fg="#000", width=24, font=("Arial Bold", 15)
+			self.frame2, bg="#F1F1F1", fg="#000", width=30, font=("Arial Bold", 15)
 		)
 		self.re_info_name.place(relx=0.55, rely=0.25)
 		self.re_info_name.insert(0, self.main_information["name"])
@@ -183,12 +183,12 @@ class app:
 			text="Профиль подготовки",
 			fg="#eee",
 			font=("Arial Bold", 15),
-			width=25,
+			width=30,
 		)
 		self.info_direction.place(relx=0.15, rely=0.35)
 
 		self.re_info_direction = Entry(
-			self.frame2, bg="#F1F1F1", fg="#000", width=24, font=("Arial Bold", 15)
+			self.frame2, bg="#F1F1F1", fg="#000", width=30, font=("Arial Bold", 15)
 		)
 		self.re_info_direction.place(relx=0.55, rely=0.35)
 		self.re_info_direction.insert(0, self.main_information["direction"])
@@ -199,12 +199,12 @@ class app:
 			text="Профиль подготовки",
 			fg="#eee",
 			font=("Arial Bold", 15),
-			width=25,
+			width=30,
 		)
 		self.info_profile.place(relx=0.15, rely=0.45)
 
 		self.re_info_profile = Entry(
-			self.frame2, bg="#F1F1F1", fg="#000", width=24, font=("Arial Bold", 15)
+			self.frame2, bg="#F1F1F1", fg="#000", width=30, font=("Arial Bold", 15)
 		)
 		self.re_info_profile.place(relx=0.55, rely=0.45)
 		self.re_info_profile.insert(0, self.main_information["profile"])
@@ -215,13 +215,13 @@ class app:
 			text="Формы контроля:",
 			fg="#eee",
 			font=("Arial Bold", 15),
-			width=25,
+			width=30,
 		)
 		self.description_forms.place(relx=0.15, rely=0.55)
 
 		self.list_of_forms = tkinter.Listbox(
 			self.frame2,
-			width=29,
+			width=37,
 			height=9,
 			bg="#f1f1f1",
 			font=("Arial Bold", 12),
@@ -278,7 +278,7 @@ class app:
 			width=6,
 			height=2
 		)
-		self.number_pp.grid(row = 0, column=0, padx=3)
+		self.number_pp.grid(row = 0, column=0, padx=6)
 
 		self.index_competence = Label(
 			self.frame_table,
@@ -288,7 +288,7 @@ class app:
 			font=("Arial Bold", 15),
 			width=11
 		)
-		self.index_competence.grid(row = 0, column=1, padx=3)
+		self.index_competence.grid(row = 0, column=1, padx=6)
 
 		self.content_competence = Label(
 			self.frame_table,
@@ -298,7 +298,7 @@ class app:
 			font=("Arial Bold", 15),
 			width=25
 		)
-		self.content_competence.grid(row=0, column=2, padx=3)
+		self.content_competence.grid(row=0, column=2, padx=6)
 
 		self.index_content_competence = Label(
 			self.frame_table,
@@ -309,7 +309,7 @@ class app:
 			width=7,
 			height=2
 		)
-		self.index_content_competence.grid(row=0, column=3, padx=3)
+		self.index_content_competence.grid(row=0, column=3, padx=6)
 
 		self.learning_outcomes = Label(
 			self.frame_table,
@@ -319,7 +319,7 @@ class app:
 			font=("Arial Bold", 15),
 			width=19
 		)
-		self.learning_outcomes.grid(row=0, column=4, padx=3)
+		self.learning_outcomes.grid(row=0, column=4, padx=6)
 
 		self.evaluation_tool = Label(
 			self.frame_table,
@@ -329,7 +329,7 @@ class app:
 			font=("Arial Bold", 15),
 			width=19
 		)
-		self.evaluation_tool.grid(row=0, column=5, padx=3)
+		self.evaluation_tool.grid(row=0, column=5, padx=6)
 
 #таблица
 		######################################################
@@ -341,7 +341,7 @@ class app:
 			bg="#2A579A",
 			text="",
 			fg="#eee",
-			font=("Arial Bold", 15),
+			font=("Arial Bold", 13),
 			width=6,
 			height=2
 		)
@@ -352,16 +352,17 @@ class app:
 			bg="#2A579A",
 			text="",
 			fg="#eee",
-			font=("Arial Bold", 15),
-			width=11
+			font=("Arial Bold", 13),
+			width=7,
+                        height = 2
 		)
 		self.compl_index_competence.grid(row=1, rowspan=3, column=1, padx=3)
 
 		self.compl_content_competence = Text(self.frame_table,
-			font=("Arial Bold", 15),
-			height=20,
-			width=25,
-			wrap=WORD
+			font=("Arial Bold", 13),
+			height=22,
+			width=30,
+			wrap=WORD,
 		)
 		self.compl_content_competence.grid(row=1, rowspan=3, column=2, padx=3)
 
@@ -370,66 +371,66 @@ class app:
 			bg="#2A579A",
 			text="",
 			fg="#eee",
-			font=("Arial Bold", 15),
-			width=7,
+			font=("Arial Bold", 13),
+			width=8,
 			height=2
 		)
 		self.compl1_index_content_competence.grid(row=1, column=3, padx=3)
 
 		self.compl1_learning_outcomes = Text(self.frame_table,
-			font=("Arial Bold", 15),
+			font=("Arial Bold", 13),
 			height=7,
-			width=19,
+			width=23,
 			wrap=WORD
 		)
-		self.compl1_learning_outcomes.grid(row=1, column=4, padx=3, pady=2)
+		self.compl1_learning_outcomes.grid(row=1, column=4, padx=3, pady=3)
 
-		self.compl1_evaluation_tool = ttk.Combobox(self.frame_table, values = self.values["forms"], font=("Arial Bold", 15))
-		self.compl1_evaluation_tool.grid(row=1, column=5, padx=3)
+		self.compl1_evaluation_tool = ttk.Combobox(self.frame_table, values = self.values["forms"], font=("Arial Bold", 13))
+		self.compl1_evaluation_tool.grid(row=1, column=5, padx=3, ipadx = 2, ipady = 2)
 
 		self.compl2_index_content_competence = Label(
 			self.frame_table,
 			bg="#2A579A",
 			text="",
 			fg="#eee",
-			font=("Arial Bold", 15),
-			width=7,
+			font=("Arial Bold", 13),
+			width=8,
 			height=2
 		)
 		self.compl2_index_content_competence.grid(row=2, column=3, padx=3)
 
 		self.compl2_learning_outcomes = Text(self.frame_table,
-			font=("Arial Bold", 15),
+			font=("Arial Bold", 13),
 			height=7,
-			width=19,
+			width=23,
 			wrap=WORD
 		)
-		self.compl2_learning_outcomes.grid(row=2, column=4, padx=3, pady=2)
+		self.compl2_learning_outcomes.grid(row=2, column=4, padx=3, pady=3)
 
-		self.compl2_evaluation_tool = ttk.Combobox(self.frame_table, values = self.values["forms"], font=("Arial Bold", 15))
-		self.compl2_evaluation_tool.grid(row=2, column=5, padx=3)
+		self.compl2_evaluation_tool = ttk.Combobox(self.frame_table, values = self.values["forms"], font=("Arial Bold", 13))
+		self.compl2_evaluation_tool.grid(row=2, column=5, padx=3,ipadx = 2, ipady = 2)
 
 		self.compl3_index_content_competence = Label(
 			self.frame_table,
 			bg="#2A579A",
 			text="",
 			fg="#eee",
-			font=("Arial Bold", 15),
-			width=7,
+			font=("Arial Bold", 13),
+			width=8,
 			height=2
 		)
 		self.compl3_index_content_competence.grid(row=3, column=3, padx=3)
 
 		self.compl3_learning_outcomes = Text(self.frame_table,
-			font=("Arial Bold", 15),
+			font=("Arial Bold", 13),
 			height=7,
-			width=19,
+			width=23,
 			wrap=WORD
 		)
-		self.compl3_learning_outcomes.grid(row=3, column=4, padx=3, pady=2)
+		self.compl3_learning_outcomes.grid(row=3, column=4, padx=3, pady=3)
 
-		self.compl3_evaluation_tool = ttk.Combobox(self.frame_table, values = self.values["forms"], font=("Arial Bold", 15))
-		self.compl3_evaluation_tool.grid(row=3, column=5, padx=3)
+		self.compl3_evaluation_tool = ttk.Combobox(self.frame_table, values = self.values["forms"], font=("Arial Bold", 13))
+		self.compl3_evaluation_tool.grid(row=3, column=5, padx=3, ipadx = 2, ipady = 2)
 
 		self.back_btn = ttk.Button(self.frame3, text="Назад", command=self.page_2)
 		self.back_btn.place(relx=0.15, rely=0.91, relwidth=0.15)
@@ -546,7 +547,7 @@ class app:
 			height=4,
 			width=15
 		)
-		self.topic_discipline.grid(row=0, rowspan=2, column=0, padx=3)
+		self.topic_discipline.grid(row=0, rowspan=2, column=0, padx=6)
 
 		self.competence_indicator = Label(
 			self.frame_table,
@@ -557,7 +558,7 @@ class app:
 			height=4,
 			width=20
 		)
-		self.competence_indicator.grid(row=0, rowspan=2, column=1, padx=3)
+		self.competence_indicator.grid(row=0, rowspan=2, column=1, padx=6)
 
 		self.planned_result = Label(
 			self.frame_table,
@@ -566,9 +567,9 @@ class app:
 			fg="#eee",
 			font=("Arial Bold", 15),
 			height=4,
-			width=11
+			width=13
 		)
-		self.planned_result.grid(row=0, rowspan=2, column=2, padx=3)
+		self.planned_result.grid(row=0, rowspan=2, column=2, padx=6)
 
 		self.indicator = Label(
 			self.frame_table,
@@ -577,9 +578,9 @@ class app:
 			fg="#eee",
 			font=("Arial Bold", 15),
 			height=4,
-			width=10
+			width=11
 		)
-		self.indicator.grid(row=0, rowspan=2, column=3, padx=3)
+		self.indicator.grid(row=0, rowspan=2, column=3, padx=6)
 
 		self.evaluation_criteria = Label(
 			self.frame_table,
@@ -588,9 +589,9 @@ class app:
 			fg="#eee",
 			font=("Arial Bold", 15),
 			height=4,
-			width=10
+			width=11
 		)
-		self.evaluation_criteria.grid(row=0, rowspan=2, column=4, padx=3)
+		self.evaluation_criteria.grid(row=0, rowspan=2, column=4, padx=6)
 
 		self.name_os = Label(
 			self.frame_table,
@@ -599,9 +600,9 @@ class app:
 			fg="#eee",
 			font=("Arial Bold", 15),
 			height=2,
-			width=15
+			width=18
 		)
-		self.name_os.grid(row=0, column=5, columnspan=2, padx=3)
+		self.name_os.grid(row=0, column=5, columnspan=2, padx=6)
 
 		self.tk = Label(
 			self.frame_table,
@@ -610,9 +611,9 @@ class app:
 			fg="#eee",
 			font=("Arial Bold", 15),
 			height=2,
-			width=7
+			width=8
 		)
-		self.tk.grid(row=1, column=5, padx=3)
+		self.tk.grid(row=1, column=5, padx=0)
 
 		self.pa = Label(
 			self.frame_table,
@@ -621,23 +622,23 @@ class app:
 			fg="#eee",
 			font=("Arial Bold", 15),
 			height=2,
-			width=7
+			width=8
 		)
-		self.pa.grid(row=1, column=6, padx=3)
+		self.pa.grid(row=1, column=6, padx=0)
 
 #таблица
 		self.i = 0
 		self.compl_topic_discipline = Text(self.frame_table,
-			font=("Arial Bold", 15),
+			font=("Arial Bold", 13),
 			height=10,
-			width=15,
+			width=18,
 			wrap=WORD
 		)
 		self.compl_topic_discipline.grid(row=2, column=0, padx=3)
 
 		self.compl_competence_indicators = tkinter.Listbox(
 			self.frame_table,
-			width=20,
+			width=25,
 			height=10,
 			bg="#f1f1f1",
 			font=("Arial Bold", 12),
@@ -651,34 +652,37 @@ class app:
 			bg="#2A579A",
 			text="hohoho,\nNO.",
 			fg="#eee",
-			font=("Arial Bold", 15),
+			font=("Arial Bold", 13),
 			height=10,
-			width=11
+			width=16
 		)
 		self.compl_planned_result.grid(row=2, column=2, padx=3)
 
 		self.compl_indicator = Text(self.frame_table,
-			font=("Arial Bold", 15),
+			font=("Arial Bold", 13),
 			height=10,
-			width=10,
+			width=13,
 			wrap=WORD
 		)
 		self.compl_indicator.grid(row=2, column=3, padx=3)
 
 		self.compl_evaluation_criteria = Text(self.frame_table,
-			font=("Arial Bold", 15),
+			font=("Arial Bold", 13),
 			height=10,
-			width=10,
+			width=13,
 			wrap=WORD
 		)
 		self.compl_evaluation_criteria.grid(row=2, column=4, padx=3)
 
-		self.compl_tk = ttk.Combobox(self.frame_table, values=self.values["forms"], font=("Arial Bold", 15), height=10, width=7)
+		self.compl_tk = ttk.Combobox(self.frame_table, values=self.values["forms"], font=("Arial Bold", 13), height=10, width=7)
 		self.compl_tk.grid(row=2, column=5, padx=3)
 
-		self.compl_pa = ttk.Combobox(self.frame_table, values=self.values["forms"], font=("Arial Bold", 15), height=10, width=7)
+		self.compl_pa = ttk.Combobox(self.frame_table, values=self.values["forms"], font=("Arial Bold", 13), height=10, width=7)
 		self.compl_pa.grid(row=2, column=6, padx=3)
 		self.write_themes(self.i)
+
+		self.back_btn = ttk.Button(self.frame4, text="Назад", command=self.page_2)
+		self.back_btn.place(relx=0.15, rely=0.91, relwidth=0.15)
 
 		self.back_table_themes_btn = ttk.Button(self.frame_table, text="Назад по таблице", command=self.themes_table_back)
 		self.back_table_themes_btn.place(relx=0.50, rely=0.91, relwidth=0.15)
