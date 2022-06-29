@@ -449,6 +449,7 @@ class app:
 		if i < len(self.competences) :
 			self.compl_number_pp.config(text = str(self.i + 1))
 			self.compl_index_competence.config(text = self.competences[i]['index'])
+			self.compl_content_competence.delete("1.0","end")
 			self.compl_content_competence.insert(1.0, self.competences[i]['content'])
 			if len(self.competences[i]['indicators']) == 2:
 				if self.third_line:
@@ -460,6 +461,9 @@ class app:
 				self.compl1_index_content_competence.config(text = self.competences[i]['indicators'][0][0])
 				self.compl2_index_content_competence.config(text = self.competences[i]['indicators'][1][0])
 
+
+				self.compl1_learning_outcomes.delete("1.0","end")
+				self.compl2_learning_outcomes.delete("1.0","end")
 				self.compl1_learning_outcomes.insert(1.0, self.competences[i]['indicators'][0][1])
 				self.compl2_learning_outcomes.insert(1.0, self.competences[i]['indicators'][1][1])
 
@@ -474,11 +478,14 @@ class app:
 				self.compl2_index_content_competence.config(text=self.competences[i]['indicators'][1][0])
 				self.compl3_index_content_competence.config(text=self.competences[i]['indicators'][2][0])
 
+				self.compl1_learning_outcomes.delete("1.0","end")
+				self.compl2_learning_outcomes.delete("1.0","end")
+				self.compl3_learning_outcomes.delete("1.0","end")
 				self.compl1_learning_outcomes.insert(1.0, self.competences[i]['indicators'][0][1])
 				self.compl2_learning_outcomes.insert(1.0, self.competences[i]['indicators'][1][1])
 				self.compl3_learning_outcomes.insert(1.0, self.competences[i]['indicators'][2][1])
 		if i + 1 == len(self.competences):
-			self.next_table_btn.config(command=self.end_page_3, text="Далее")
+			self.next_table_btn.config(command=self.end_page_3, text="всё")
 
 	def competence_to_interface_back(self):
 		if self.i > 0:
@@ -692,6 +699,7 @@ class app:
 		self.next_table_themes_btn.place(relx=0.75, rely=0.91, relwidth=0.15)
 
 	def write_themes(self, i):
+		self.compl_topic_discipline.delete("1.0","end")
 		self.compl_topic_discipline.insert(1.0, self.themes[i]['name'])
 
 	def themes_table_next(self):
@@ -707,16 +715,20 @@ class app:
 			self.i += 1
 			self.write_themes(self.i)
 			if self.i + 1 == len(self.themes):
-				self.next_table_themes_btn.config(command = self.end_page_4, text = "Далее")
+				self.next_table_themes_btn.config(command = self.end_page_4, text = "Всё")
 		else:
-			self.next_table_themes_btn.config(command = self.end_page_4, text = "Далее")
+			self.next_table_themes_btn.config(command = self.end_page_4, text = "Всё")
 
 	def themes_table_back(self):
 		if self.i > 0:
-			self.themes[self.i]['indicators'].clear()
-			self.themes[self.i]['planned_result'].clear()
+			for key in self.themes[self.i]:
+				if key != 'index' and key !='name':
+					self.themes[self.i][key].clear()
 			self.i -= 1
 			self.write_themes(self.i)
+
+		if self.i + 1 < len(self.competences):
+			self.next_table_themes_btn.config(command=self.themes_table_next, text="Далее по таблице")
 
 		if self.i + 1 < len(self.competences):
 			self.next_table_themes_btn.config(command=self.themes_table_next, text="Далее по таблице")
