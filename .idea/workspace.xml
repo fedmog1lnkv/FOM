@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="439d788a-33b6-4ced-887e-4f5d3bec449c" name="Changes" comment="">
+    <list default="true" id="439d788a-33b6-4ced-887e-4f5d3bec449c" name="Changes" comment="Changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docx/shablon.docx" beforeDir="false" afterPath="$PROJECT_DIR$/docx/shablon.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docx/~$rpd.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docx/~$w_from_maket.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docx[eq.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/maket.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/арихмтектура.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <list id="21ddb62d-87d7-40ca-b26d-4693b580182a" name="Changes by dan03" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,13 +26,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kuzne/Desktop/FOM&quot;
-  }
-}</component>
   <component name="RunManager" selected="Python.main">
     <configuration name="filler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FOM" />
@@ -67,9 +55,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\dan03\PycharmProjects\pythonProject\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
@@ -147,5 +135,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

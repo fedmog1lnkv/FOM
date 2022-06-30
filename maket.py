@@ -666,7 +666,7 @@ class app:
 		self.compl_planned_result = Label(
 			self.frame_table,
 			bg="#2A579A",
-			text="автоматическая\nподгрузка\nиз вышего файла",
+			text="hohoho,\nNO.",
 			fg="#eee",
 			font=("Arial Bold", 13),
 			height=10,
@@ -755,7 +755,6 @@ class app:
 		for i in self.master.winfo_children():
 			i.destroy()
 		
-		
 		for i in range(len(self.competences)):
 			for j in range(len(self.competences[i]['indicators'])):
 				self.competences[i]['indicators'][j] = (self.competences[i]['indicators'][j][0], self.competences[i]['indicators'][j][1], self.evalutions_tools[i][j])
@@ -775,11 +774,17 @@ class app:
 			font=("Arial Bold", 25),
 		)
 		self.header_save.place(relwidth=1)
+                
+                #self.textsave = Label(self.frame4, text = "Введите\nназвание файла",  font=("Arial Bold", 15), justify=LEFT)
+                #self.textsave.place(relx= 0.05, rely=0.5)
 
+		
+		#self.message.pack(expand=1)
 		self.new_file_name = Entry(
 			self.frame4, font=("Arial Bold", 25)
 		)
 
+		
 		self.label_save = Label(
 			self.frame4,
 			bg="#F0F0F0",
@@ -789,6 +794,7 @@ class app:
 			font=("Arial Bold", 20),
 		)
 		self.label_save.place(relx=0.05, rely=0.37)
+
                 
 		self.img_save = ImageTk.PhotoImage(Image.open("image/save.png"))
 		self.panel_save = Label(self.frame4, image=self.img_save, bg="#F0F0F0")
@@ -796,13 +802,16 @@ class app:
 		
 		self.new_file_name.place(relx = 0.05, rely = 0.5)
 		self.page1_btn = ttk.Button(
-			self.frame4, text="Сохранить", command=self.save_file)
+			self.frame4, text="Сохранить", command=self.save_file
+		)
 		self.page1_btn.place(relx=0.29, rely=0.56)
 		self.page1_btn = ttk.Button(
-			self.frame4, text="Вернуться в начало", command=self.open_page_1)
+			self.frame4, text="Вернуться в начало", command=self.open_page_1
+		)
 		self.page1_btn.place(relx=0.65, rely=0.91, relwidth=0.15)
-
+		#self.page1_btn.pack()
 		self.quit_btn = ttk.Button(self.frame4, text="Выход", command=self.close_app)
+		#self.quit_btn.pack()
 		self.quit_btn.place(relx=0.25, rely=0.91, relwidth=0.15)
 		
 	def save_file(self):
@@ -825,20 +834,6 @@ class app:
 		self.editor.fill_developers(self.local_parser.get_developers())
 		self.editor.fill_competences(self.competences)
 		self.editor.fill_themes(self.themes)
-	
-	def clear_all(self):
-		self.main_information = None
-		self.competences = None
-		self.evalutions_tools = []
-		self.themes = []
-		self.values = {
-				"code": '',
-				"name": '',
-				"direction": '',
-				"profile": '',
-				"forms" : []
-			}
-		self.right_file = False
 
 	def page_6(self):
 		for i in self.master.winfo_children():
@@ -855,6 +850,17 @@ class app:
 		)
 		self.page1_btn.pack()
 		self.quit_btn = ttk.Button(self.frame4, text="Выход", command=self.close_app)
+		#self.quit_btn.pack()
+
+
+
+                #self.quit_btn = ttk.Button(self.frame4, text="Выход", command=self.close_app)
+		#self.quit_btn.place(relx=0.25, rely=0.91, relwidth=0.15)
+
+
+		#self.next_btn = ttk.Button(self.frame4, text="Далее", command=self.page_2)
+		#self.next_btn.place(relx=0.65, rely=0.91, relwidth=0.15)
+		
 
 	def page_FAQ(self):
 		for i in self.master.winfo_children():
@@ -877,15 +883,84 @@ class app:
 			self.frame3,
 			bg="#E6E6E6",
 			fg="#000",
-			text="Над проектом\nработали:\nБыстров Артём\nЕжов Егор\nИващенко Данила\nКузнецов Фёдор",
+			text="Программа создана для\nупрощения вашей работы.\nВы сможете \nотредактировать документ \nпо шаблону, не прилагая \nмного усилий и кучу \nвремени",
 			justify=LEFT,
 			font=("Arial Bold", 20),
 		)
-		self.label_2.place(relx=0.08, rely=0.3)
+		self.label_2.place(relx=0.08, rely=0.26)
+		#########################################################################
+		self.img_1 = ImageTk.PhotoImage(Image.open("image/Website.png"))
+		self.panel_1 = Label(self.frame3, image=self.img_1, bg="#E6E6E6")
+		self.panel_1.place(relx=0.6, rely=0.26)
 
-		self.img_4 = ImageTk.PhotoImage(Image.open("image/team.png"))
+		self.image_text_1 = Label(
+			self.frame3,
+			text="Создание\nвеб - сайтов",
+			bg="#E6E6E6",
+			fg="#000",
+			font=("Arial Bold", 15),
+			justify=CENTER,
+		)
+		self.image_text_1.place(relx=0.58, rely=0.41)
+		####################################################################
+		self.img_2 = ImageTk.PhotoImage(Image.open("image/Website.png"))
+		self.panel_2 = Label(self.frame3, image=self.img_2, bg="#E6E6E6")
+		self.panel_2.place(relx=0.8, rely=0.26)
+
+		self.image_text_2 = Label(
+			self.frame3,
+			text="Создание\nвеб - сайтов",
+			bg="#E6E6E6",
+			fg="#000",
+			font=("Arial Bold", 15),
+			justify=CENTER,
+		)
+		self.image_text_2.place(relx=0.78, rely=0.41)
+		################################################################
+		#########################################################################
+		self.img_3 = ImageTk.PhotoImage(Image.open("image/Website.png"))
+		self.panel_3 = Label(self.frame3, image=self.img_3, bg="#E6E6E6")
+		self.panel_3.place(relx=0.6, rely=0.56)
+
+		self.image_text_3 = Label(
+			self.frame3,
+			text="Создание\nвеб - сайтов",
+			bg="#E6E6E6",
+			fg="#000",
+			font=("Arial Bold", 15),
+			justify=CENTER,
+		)
+		self.image_text_3.place(relx=0.58, rely=0.71)
+		####################################################################
+		self.img_4 = ImageTk.PhotoImage(Image.open("image/Website.png"))
 		self.panel_4 = Label(self.frame3, image=self.img_4, bg="#E6E6E6")
-		self.panel_4.place(relx=0.6, rely=0.23)
+		self.panel_4.place(relx=0.8, rely=0.56)
+
+		self.image_text_4 = Label(
+			self.frame3,
+			text="Создание\nвеб - сайтов",
+			bg="#E6E6E6",
+			fg="#000",
+			font=("Arial Bold", 15),
+			justify=CENTER,
+		)
+		self.image_text_4.place(relx=0.78, rely=0.71)
+		################################################################
+		# self.FAQ_lbl = ttk.Label(self.frame3,
+		# 						 text=FQ,
+		# 						 justify=LEFT,
+		# 						 font=("Arial Bold", 15))
+		# self.FAQ_lbl.place(relx=0.05, rely=0.1)
+
+		# self.FAQ_btn = ttk.Button(self.frame3,
+		# 						  text="О нас",
+		# 						  command=self.page_3)
+		# self.FAQ_btn.place(relx=0.65, rely=0.91, relwidth=0.1)
+
+		# self.page1_btn = ttk.Button(self.frame3,
+		# 							text="Вернуться в начало",
+		# 							command=self.page_1)
+		# self.page1_btn.place(relx=0.75, rely=0.91, relwidth=0.2)
 
 		self.FAQ_btn = ttk.Button(self.frame3, text="Выход", command=self.close_app)
 		self.FAQ_btn.place(relx=0.25, rely=0.91, relwidth=0.15)
@@ -901,7 +976,7 @@ class app:
 
 
 root = Tk()
-root.protocol("WM_DELETE_WINDOW", on_closing)
-root.wm_attributes("-topmost", False)
+root.protocol("WM_DELETE_WINDOW", on_closing)  # Подтверждение при закрытии
+root.wm_attributes("-topmost", 1)  # Выводится над всеми окнами
 app(root)
 root.mainloop()
