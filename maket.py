@@ -777,17 +777,27 @@ class app:
 			self.frame4, font=("Arial Bold", 25)
 		)
 
+		
+		self.label_save = Label(
+			self.frame4,
+			bg="#F0F0F0",
+			fg="#000",
+			text="Введите\nназвание файла",
+			justify=LEFT,
+			font=("Arial Bold", 20),
+		)
+		self.label_save.place(relx=0.05, rely=0.37)
 
                 
 		self.img_save = ImageTk.PhotoImage(Image.open("image/save.png"))
-		self.panel_save = Label(self.frame4, image=self.img_save, bg="#E6E6E6")
-		self.panel_save.place(relx=0.6, rely=0.26)
+		self.panel_save = Label(self.frame4, image=self.img_save, bg="#F0F0F0")
+		self.panel_save.place(relx=0.6, rely=0.22)
 		
-		self.new_file_name.place(relx = 0.05, rely = 0.6)
+		self.new_file_name.place(relx = 0.05, rely = 0.5)
 		self.page1_btn = ttk.Button(
 			self.frame4, text="Сохранить", command=self.save_file
 		)
-		self.page1_btn.place(relx=0.29, rely=0.66)
+		self.page1_btn.place(relx=0.29, rely=0.56)
 		self.page1_btn = ttk.Button(
 			self.frame4, text="Вернуться в начало", command=self.open_page_1
 		)
@@ -950,7 +960,7 @@ class app:
 		self.FAQ_btn.place(relx=0.25, rely=0.91, relwidth=0.15)
 
 		self.next_btn = ttk.Button(
-			self.frame3, text="Вернуться в начало", command=self.open_page_1
+			self.frame3, text="Вернуться в начало", command=self.page_1
 		)
 		self.next_btn.place(relx=0.65, rely=0.91, relwidth=0.15)
 
