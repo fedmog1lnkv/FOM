@@ -666,7 +666,7 @@ class app:
 		self.compl_planned_result = Label(
 			self.frame_table,
 			bg="#2A579A",
-			text="hohoho,\nNO.",
+			text="автоматическая\nподгрузка\nиз вышего файла",
 			fg="#eee",
 			font=("Arial Bold", 13),
 			height=10,
@@ -774,17 +774,11 @@ class app:
 			font=("Arial Bold", 25),
 		)
 		self.header_save.place(relwidth=1)
-                
-                #self.textsave = Label(self.frame4, text = "Введите\nназвание файла",  font=("Arial Bold", 15), justify=LEFT)
-                #self.textsave.place(relx= 0.05, rely=0.5)
 
-		
-		#self.message.pack(expand=1)
 		self.new_file_name = Entry(
 			self.frame4, font=("Arial Bold", 25)
 		)
 
-		
 		self.label_save = Label(
 			self.frame4,
 			bg="#F0F0F0",
@@ -794,7 +788,6 @@ class app:
 			font=("Arial Bold", 20),
 		)
 		self.label_save.place(relx=0.05, rely=0.37)
-
                 
 		self.img_save = ImageTk.PhotoImage(Image.open("image/save.png"))
 		self.panel_save = Label(self.frame4, image=self.img_save, bg="#F0F0F0")
@@ -802,16 +795,13 @@ class app:
 		
 		self.new_file_name.place(relx = 0.05, rely = 0.5)
 		self.page1_btn = ttk.Button(
-			self.frame4, text="Сохранить", command=self.save_file
-		)
+			self.frame4, text="Сохранить", command=self.save_file)
 		self.page1_btn.place(relx=0.29, rely=0.56)
 		self.page1_btn = ttk.Button(
-			self.frame4, text="Вернуться в начало", command=self.open_page_1
-		)
+			self.frame4, text="Вернуться в начало", command=self.open_page_1)
 		self.page1_btn.place(relx=0.65, rely=0.91, relwidth=0.15)
-		#self.page1_btn.pack()
+
 		self.quit_btn = ttk.Button(self.frame4, text="Выход", command=self.close_app)
-		#self.quit_btn.pack()
 		self.quit_btn.place(relx=0.25, rely=0.91, relwidth=0.15)
 		
 	def save_file(self):
@@ -849,17 +839,6 @@ class app:
 		)
 		self.page1_btn.pack()
 		self.quit_btn = ttk.Button(self.frame4, text="Выход", command=self.close_app)
-		#self.quit_btn.pack()
-
-
-
-                #self.quit_btn = ttk.Button(self.frame4, text="Выход", command=self.close_app)
-		#self.quit_btn.place(relx=0.25, rely=0.91, relwidth=0.15)
-
-
-		#self.next_btn = ttk.Button(self.frame4, text="Далее", command=self.page_2)
-		#self.next_btn.place(relx=0.65, rely=0.91, relwidth=0.15)
-		
 
 	def page_FAQ(self):
 		for i in self.master.winfo_children():
@@ -887,31 +866,10 @@ class app:
 			font=("Arial Bold", 20),
 		)
 		self.label_2.place(relx=0.08, rely=0.3)
-		#########################################################################
-		
 
-
-		####################################################################
 		self.img_4 = ImageTk.PhotoImage(Image.open("image/team.png"))
 		self.panel_4 = Label(self.frame3, image=self.img_4, bg="#E6E6E6")
 		self.panel_4.place(relx=0.6, rely=0.23)
-
-		################################################################
-		# self.FAQ_lbl = ttk.Label(self.frame3,
-		# 						 text=FQ,
-		# 						 justify=LEFT,
-		# 						 font=("Arial Bold", 15))
-		# self.FAQ_lbl.place(relx=0.05, rely=0.1)
-
-		# self.FAQ_btn = ttk.Button(self.frame3,
-		# 						  text="О нас",
-		# 						  command=self.page_3)
-		# self.FAQ_btn.place(relx=0.65, rely=0.91, relwidth=0.1)
-
-		# self.page1_btn = ttk.Button(self.frame3,
-		# 							text="Вернуться в начало",
-		# 							command=self.page_1)
-		# self.page1_btn.place(relx=0.75, rely=0.91, relwidth=0.2)
 
 		self.FAQ_btn = ttk.Button(self.frame3, text="Выход", command=self.close_app)
 		self.FAQ_btn.place(relx=0.25, rely=0.91, relwidth=0.15)
@@ -927,7 +885,7 @@ class app:
 
 
 root = Tk()
-root.protocol("WM_DELETE_WINDOW", on_closing)  # Подтверждение при закрытии
-root.wm_attributes("-topmost", 1)  # Выводится над всеми окнами
+root.protocol("WM_DELETE_WINDOW", on_closing)
+root.wm_attributes("-topmost", False)
 app(root)
 root.mainloop()

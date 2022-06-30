@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="439d788a-33b6-4ced-887e-4f5d3bec449c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docx/new_from_maket.docx" beforeDir="false" afterPath="$PROJECT_DIR$/docx/new_from_maket.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maket.py" beforeDir="false" afterPath="$PROJECT_DIR$/maket.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docx/shablon.docx" beforeDir="false" afterPath="$PROJECT_DIR$/docx/shablon.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docx/~$rpd.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docx/~$w_from_maket.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docx[eq.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maket.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/арихмтектура.txt" beforeDir="false" />
     </list>
     <list id="21ddb62d-87d7-40ca-b26d-4693b580182a" name="Changes by dan03" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +22,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/filler.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/maket.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -28,14 +31,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/kuzne/Desktop/FOM"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kuzne/Desktop/FOM&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Python.maket">
+}</component>
+  <component name="RunManager" selected="Python.main">
     <configuration name="filler" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FOM" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -49,6 +52,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/filler.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FOM" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -79,11 +103,13 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.main" />
       <item itemvalue="Python.filler" />
       <item itemvalue="Python.maket" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.maket" />
         <item itemvalue="Python.filler" />
       </list>
