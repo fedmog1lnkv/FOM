@@ -882,68 +882,20 @@ class app:
 			self.frame3,
 			bg="#E6E6E6",
 			fg="#000",
-			text="Программа создана для\nупрощения вашей работы.\nВы сможете \nотредактировать документ \nпо шаблону, не прилагая \nмного усилий и кучу \nвремени",
+			text="Над проектом\nработали:\nБыстров Артём\nЕжов Егор\nИващенко Данила\nКузнецов Фёдор",
 			justify=LEFT,
 			font=("Arial Bold", 20),
 		)
-		self.label_2.place(relx=0.08, rely=0.26)
+		self.label_2.place(relx=0.08, rely=0.3)
 		#########################################################################
-		self.img_1 = ImageTk.PhotoImage(Image.open("image/Website.png"))
-		self.panel_1 = Label(self.frame3, image=self.img_1, bg="#E6E6E6")
-		self.panel_1.place(relx=0.6, rely=0.26)
+		
 
-		self.image_text_1 = Label(
-			self.frame3,
-			text="Создание\nвеб - сайтов",
-			bg="#E6E6E6",
-			fg="#000",
-			font=("Arial Bold", 15),
-			justify=CENTER,
-		)
-		self.image_text_1.place(relx=0.58, rely=0.41)
+
 		####################################################################
-		self.img_2 = ImageTk.PhotoImage(Image.open("image/Website.png"))
-		self.panel_2 = Label(self.frame3, image=self.img_2, bg="#E6E6E6")
-		self.panel_2.place(relx=0.8, rely=0.26)
-
-		self.image_text_2 = Label(
-			self.frame3,
-			text="Создание\nвеб - сайтов",
-			bg="#E6E6E6",
-			fg="#000",
-			font=("Arial Bold", 15),
-			justify=CENTER,
-		)
-		self.image_text_2.place(relx=0.78, rely=0.41)
-		################################################################
-		#########################################################################
-		self.img_3 = ImageTk.PhotoImage(Image.open("image/Website.png"))
-		self.panel_3 = Label(self.frame3, image=self.img_3, bg="#E6E6E6")
-		self.panel_3.place(relx=0.6, rely=0.56)
-
-		self.image_text_3 = Label(
-			self.frame3,
-			text="Создание\nвеб - сайтов",
-			bg="#E6E6E6",
-			fg="#000",
-			font=("Arial Bold", 15),
-			justify=CENTER,
-		)
-		self.image_text_3.place(relx=0.58, rely=0.71)
-		####################################################################
-		self.img_4 = ImageTk.PhotoImage(Image.open("image/Website.png"))
+		self.img_4 = ImageTk.PhotoImage(Image.open("image/team.png"))
 		self.panel_4 = Label(self.frame3, image=self.img_4, bg="#E6E6E6")
-		self.panel_4.place(relx=0.8, rely=0.56)
+		self.panel_4.place(relx=0.6, rely=0.23)
 
-		self.image_text_4 = Label(
-			self.frame3,
-			text="Создание\nвеб - сайтов",
-			bg="#E6E6E6",
-			fg="#000",
-			font=("Arial Bold", 15),
-			justify=CENTER,
-		)
-		self.image_text_4.place(relx=0.78, rely=0.71)
 		################################################################
 		# self.FAQ_lbl = ttk.Label(self.frame3,
 		# 						 text=FQ,
