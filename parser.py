@@ -107,7 +107,6 @@ class parser:
 		return idks
 
 	def clear(self):
-		print("Почистили")
 		self.main_information.clear()
 		self.competences.clear()
 		self.developers.clear()

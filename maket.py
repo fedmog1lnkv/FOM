@@ -54,6 +54,7 @@ class app:
 		"profile": '',
 		"forms" : []
 	}
+	right_file = False
 
 	def __init__(self, master):
 		self.master = master
@@ -64,6 +65,8 @@ class app:
 
 	def request_file(self):
 		filename = filedialog.askopenfilename()
+		if filename != "":
+			self.right_file = True
 		self.local_parser = parser(filename)
 		self.main_information = self.local_parser.get_main_information()
 		self.competences = self.local_parser.get_competences()
@@ -127,10 +130,14 @@ class app:
 		self.next_btn.place(relx=0.65, rely=0.91, relwidth=0.15)
 
 	def open_page_1(self):
+		self.right_file = False
 		self.local_parser.clear()
 		self.page_1()
 
 	def page_2(self):
+		if not(self.right_file):
+			return
+
 		self.values['forms'].clear()
 		for i in self.master.winfo_children():
 			i.destroy()
@@ -810,18 +817,16 @@ class app:
 	def save_file(self):
 		if self.new_file_name.get() != "":
 			if not(".docx" in self.new_file_name.get()) and "." in self.new_file_name.get():
-				self.message.config(text = "Укажите расширение docx")
-			elif not(".docx" in self.new_file_name.get()) and not("." in self.new_file_name.get()):
-				directory = filedialog.askdirectory()
-				self.editor.save(directory + self.new_file_name.get() + ".docx")
-				self.message.config(text = "Файл сохранён")
-				self.page_6()
+				self.label_save.config(text = "Укажите расширение docx")
 			else:
-				directory = filedialog.askdirectory()
-				self.editor.save(directory + self.new_file_name.get())
+				file_name = filedialog.askdirectory() + "/" + self.new_file_name.get()
+				if not(".docx" in self.new_file_name.get()) and not("." in self.new_file_name.get()):
+					file_name += ".docx"
+				self.save_all()
+				self.editor.save(file_name)
 				self.page_6()
 		else:
-			self.message.config(text = "Вы не указали имя файла")
+			self.label_save.config(text = "Вы не указали имя файла")
 
 	def save_all(self):
 		self.editor.fill_main_information(self.values)
