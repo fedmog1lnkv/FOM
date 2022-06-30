@@ -486,7 +486,7 @@ class app:
 				self.compl2_learning_outcomes.insert(1.0, self.competences[i]['indicators'][1][1])
 				self.compl3_learning_outcomes.insert(1.0, self.competences[i]['indicators'][2][1])
 		if i + 1 == len(self.competences):
-			self.next_table_btn.config(command=self.end_page_3, text="всё")
+			self.next_table_btn.config(command=self.end_page_3, text="Далее по таблице")
 
 	def competence_to_interface_back(self):
 		if self.i > 0:
@@ -716,9 +716,9 @@ class app:
 			self.i += 1
 			self.write_themes(self.i)
 			if self.i + 1 == len(self.themes):
-				self.next_table_themes_btn.config(command = self.end_page_4, text = "Всё")
+				self.next_table_themes_btn.config(command = self.end_page_4, text = "Далее")
 		else:
-			self.next_table_themes_btn.config(command = self.end_page_4, text = "Всё")
+			self.next_table_themes_btn.config(command = self.end_page_4, text = "Далее")
 
 	def themes_table_back(self):
 		if self.i > 0:
@@ -754,25 +754,49 @@ class app:
 
 		self.frame4 = Frame(self.master, width=300, height=300)
 		self.frame4.place(relx=0, rely=0, relwidth=1, relheight=1)
-		self.message = ttk.Label(
-			self.frame4, text="ещё есть над чем работать", font=("Arial Bold", 25)
+		#self.message = ttk.Label(
+		#	self.frame4, text="Сохранение файла", font=("Arial Bold", 25)
+		#)
+
+		
+		self.header_save = Label(
+			self.frame4,
+			bg="#2A579A",
+			fg="#eee",
+			text="Сохранение файла",
+			font=("Arial Bold", 25),
 		)
-		self.message.pack(expand=1)
+		self.header_save.place(relwidth=1)
+                
+                #self.textsave = Label(self.frame4, text = "Введите\nназвание файла",  font=("Arial Bold", 15), justify=LEFT)
+                #self.textsave.place(relx= 0.05, rely=0.5)
+
+		
+		#self.message.pack(expand=1)
 		self.new_file_name = Entry(
 			self.frame4, font=("Arial Bold", 25)
 		)
-		self.new_file_name.pack()
+
+
+                
+		self.img_save = ImageTk.PhotoImage(Image.open("image/save.png"))
+		self.panel_save = Label(self.frame4, image=self.img_save, bg="#E6E6E6")
+		self.panel_save.place(relx=0.6, rely=0.26)
+		
+		self.new_file_name.place(relx = 0.05, rely = 0.6)
 		self.page1_btn = ttk.Button(
 			self.frame4, text="Сохранить", command=self.save_file
 		)
-		self.page1_btn.pack()
+		self.page1_btn.place(relx=0.29, rely=0.66)
 		self.page1_btn = ttk.Button(
 			self.frame4, text="Вернуться в начало", command=self.open_page_1
 		)
-		self.page1_btn.pack()
+		self.page1_btn.place(relx=0.65, rely=0.91, relwidth=0.15)
+		#self.page1_btn.pack()
 		self.quit_btn = ttk.Button(self.frame4, text="Выход", command=self.close_app)
-		self.quit_btn.pack()
-
+		#self.quit_btn.pack()
+		self.quit_btn.place(relx=0.25, rely=0.91, relwidth=0.15)
+		
 	def save_file(self):
 		if self.new_file_name.get() != "":
 			if not(".docx" in self.new_file_name.get()) and "." in self.new_file_name.get():
@@ -787,7 +811,7 @@ class app:
 				self.editor.save(directory + self.new_file_name.get())
 				self.page_6()
 		else:
-			self.message.config(text = "Вы ну указали имя файла")
+			self.message.config(text = "Вы не указали имя файла")
 
 	def save_all(self):
 		self.editor.fill_main_information(self.values)
@@ -810,7 +834,17 @@ class app:
 		)
 		self.page1_btn.pack()
 		self.quit_btn = ttk.Button(self.frame4, text="Выход", command=self.close_app)
-		self.quit_btn.pack()
+		#self.quit_btn.pack()
+
+
+
+                #self.quit_btn = ttk.Button(self.frame4, text="Выход", command=self.close_app)
+		#self.quit_btn.place(relx=0.25, rely=0.91, relwidth=0.15)
+
+
+		#self.next_btn = ttk.Button(self.frame4, text="Далее", command=self.page_2)
+		#self.next_btn.place(relx=0.65, rely=0.91, relwidth=0.15)
+		
 
 	def page_FAQ(self):
 		for i in self.master.winfo_children():
