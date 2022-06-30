@@ -41,7 +41,7 @@ class app:
 
 	forms = []
 
-	editor = filler("docx/shablon_test.docx")
+	editor = filler("docx/shablon.docx")
 	local_parser = None
 	main_information = None
 	competences = None
